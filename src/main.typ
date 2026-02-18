@@ -94,7 +94,7 @@
 
 
 
-= Methods (5-6 pages)
+= Methods (3-4 pages)
 
 Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
 
@@ -129,7 +129,7 @@ Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
 - coût total en temps de calcul
 - Comment être reproductible?
 
-=  Atomistic results : lipid dependent ligand-membrane coupling (7-8 pages)
+=  Atomistic results : lipid dependent ligand-membrane coupling (5-6 pages)
 
 == Insertion, orientation
 - Gel vs fluid comparison
