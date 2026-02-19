@@ -67,14 +67,20 @@
 
 = Introduction (4-5 pages)
 
-== Biological and pharmacological Context
-- Rapidement l'existence du CB1 et le système endocannabinoide
-- Où est exprimé le CB1
-- Contexte lipidomique de ces zones
-- Altération lipidique, par exemple chez les patients préschizophrènes (w6 depletion)
-- Pourquoi les membranes peuvent interagir avec le médicament (allostérie, deuxième cible quand y'a un "miss" du récepteur, etc)
+== Biological and pharmacological context
 
-== Lipid membranes as physical systems
+The endocannabinoid system (ECS) plays a central role in neuronal signaling and is a prime pharmacological target for various neurological and metabolic disorders. At its core lies the cannabinoid receptor type 1 (CB1), a G protein-coupled receptor (GPCR) that is among the most abundantly expressed receptors in the mammalian central nervous system [*ref*].
+
+Unlike classical neurotransmitters, which are stored in synaptic vesicles and released into the aqueous synaptic cleft, endogenous ligands are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids [*ref*]. Due to their pronounced lipophilicity, they partition into the lipid bilayer, making the membrane the primary medium for ligand transport. Recent structural biology and pharmacological assays suggest that the orthosteric binding pocket of CB1 is not accessed from the extracellular bulk, but rather via lateral diffusion from the intramembrane space [*ref*]. Consequently, the plasma membrane acts as more than a passive scaffold; it functions as a physicochemical pre-filter that dictates local bioavailability and orientation of ligands before receptor engagement.
+
+
+The presynaptic membrane, where CB1 is largely localized, exhibits a rich lipid architecture --- in sterols, phospholipids and sphingolipids [*ref*] --- that maintains the mechanical and chemical environment necessary for synaptic transmission [*ref*]. However, this environment is susceptible to physiological and pathological remodeling. For instance, clinical lipidomic analyses have identified significant depletion in polyunsaturated fatty acids ($omega$--6) content in patients experiencing a first psychotic episode [*ref*]. From a biophysical perspective, such compositional shifts modify the fundamental properties of the bilayer, including acyl chain order, thickness, bending stiffness, ...
+
+In this context, the efficacy of amphilic drugs is tied to their coupling with their lipid environment: the pharmacodynamic profile of a drug is not only a function of its affinity for the protein target, but also of its ability to navigate the free energy landscape imposed by its environment. Once ligand inserts the bilayer, it may locally perturb the nanoscopic organization of the membrane, while the mesoscopic mechanical constraints reciprocally limit the energetic configurations accessible to the drug.
+
+Therefore, the ligand-membrane interaction should be regarded as a coupled physicochemical system, in which local lipid composition acts a critical determinant of drug partioning, diffusion, and ultimately, pharmacological potency. As such, drug-membrane coupling cannot be reduced to a secondary effect preceding receptor binding, but rather constitutes a layer of regulation in its own right. Characterizing this interaction is consequently essential for a comprehensive understanding of membrane-associated drug behavior.
+
+== Lipid membranes as physicochemical systems
 - Riche comportement de phases (gel, liquid ordered, liquid disordered, lamellaire, micelles, ...)
 - Role des (un)saturations
 - L'effet du cholésterol dans la littérature
@@ -189,3 +195,18 @@ Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
 
 = Conclusion (3 pages)
 
+
+#pagebreak()
+#show: appendix
+
+
+= Glossary
+
+- ECS
+- CB1
+- GPCR
+- PUFA
+- affinity
+- potency
+- lipid ?
+- scaffold
