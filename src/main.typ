@@ -105,16 +105,26 @@ Although phase equilibria are temperature-dependent, physiological conditions ty
 
 In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing [*ref heberle*], leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipid rafts, this mesoscale structure reflects the balance between entropic mixing and favorable intermolecular interactions, and results in regions exhibiting various mechanical properties.
 
-== Ligand-membrane coupling
-- Insertion, coefficient de partition (logP)
-- Energie, couplage mecanique
-- Bref revue des ligands du CB1
-- Justifier que CP55 est un bon modèle (caractéristiques physicochimiques)
+== Ligand–membrane coupling
+
+While lipophilicity is often invoked to rationalize membrane affinity, a single partition coefficient (logP) cannot fully describe the complexity of ligand insertion into lipid bilayers, even though it is true that most CB1 ligands exhibit relatively high logP values [*ref* si rien littérature, faire un tableau nous meme]. One reason is that the experimental determination of logP typically relies on octanol--water partitioning [*ref method*], a simplified system that lacks the headgroup region --- which defines a chemically distinct interfacial environment.
+
+Another limitation is that logP constitutes a purely thermodynamic descriptor and therefore provides little insight into the microscopic mechanism of insertion. It does not inform on whether a ligand preferentially enters through hydrophobic regions, whether it should reorient upon insertion, or how it organizes once embedded within the bilayer.
+
+To characterize insertion preferences, it is more informative to compute potentials of mean force (PMFs) [*ref?*], that is, free--energy profiles evaluated along a chosen reaction coordinate --- typically the membrane normal --- using numerical approaches. PMFs provide access to the energetic cost associated with membrane entry, identify possible interfacial minima, and reveal insertion barriers that could not be inferred from a global partition coefficient alone. 
+
+From this perspective, the membrane can be treated as an energy landscape experienced by the ligand. While such an approach is necessary to quantify insertion and identify potential barriers, it remains a reduced description of the interaction.  The question arises: what is the physical nature of ligand-membrane? A first level of consideration is steric. Much like inclusions in liquid crystals, an inserted ligand can be expected to behave as a local defect, perturbing lipid packing and altering the orientational order of neighboring acyl chains. Additional mechanical effects may also emerge; the ligand may locally displace lipids upon insertion, generating curvature stress or elastic deformation of the surrounding [*ref*].
+
+Beyond steric and mechanical aspects, chemical and electrostatic contributions must be considered. The membrane interface is characterized by a heterogeneous distribution of charges and dipoles, and screening effects are not necessarily uniform across the interfacial region. From a physical standpoint, the bilayer thus constitutes an electromagnetic environment, within which local interactions may further modulate ligand behavior.
+
+Within this framework, CP55,940 emerges as a particularly relevant model ligand for CB1. Beyond its established pharmacological profile [*ref*] as a potent CB1 agonist, it presents physicochemical characteristics that make it especially suitable for investigating ligand–-membrane coupling. It exhibits a relatively high partition coefficient, consistent with strong membrane affinity. Its molecular architecture combines an aromatic core and a hydrophobic aliphatic moiety, favoring insertion toward the bilayer interior, with additional polar functional groups capable of interacting with interfacial regions. Such amphiphilic balance makes it structurally compatible with prolonged residence within a bilayer while maintaining the ability to sample different insertion depths and orientations. It is therefore reasonable to treat CP55,940 as the molecular probe it has effectively become within the CB1 literature.
+
 
 == Objectives
 - Etudier l'influence des lipides sur le couplage ligand-membrane
 - Explorer des effets d'échelles de la composition
 - Donner une interprétation multiéchelle du contexte lipidomique
+- Justifier l'approche 1 seul ligand
 - Expliquer les différents indicateurs dont on va se servir (Sch, epaisseur, pourquoi on fait ça etc).
 
 
