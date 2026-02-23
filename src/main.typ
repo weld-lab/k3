@@ -69,23 +69,41 @@
 
 == Biological and pharmacological context
 
-The endocannabinoid system (ECS) plays a central role in neuronal signaling and is a prime pharmacological target for various neurological and metabolic disorders. At its core lies the cannabinoid receptor type 1 (CB1), a G protein-coupled receptor (GPCR) that is among the most abundantly expressed receptors in the mammalian central nervous system [*ref*].
+In a highly lipophilic environment, the membrane cannot be regarded as a passive element. Being itself a lipid assembly, it inevitably becomes the primary physicochemical landscape for molecules exhibiting strong hydrophobic character.
 
-Unlike classical neurotransmitters, which are stored in synaptic vesicles and released into the aqueous synaptic cleft, endogenous ligands are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids [*ref*]. Due to their pronounced lipophilicity, they partition into the lipid bilayer, making the membrane the primary medium for ligand transport. Recent structural biology and pharmacological assays suggest that the orthosteric binding pocket of CB1 is not accessed from the extracellular bulk, but rather via lateral diffusion from the intramembrane space [*ref*]. Consequently, the plasma membrane acts as more than a passive scaffold; it functions as a physicochemical pre-filter that dictates local bioavailability and orientation of ligands before receptor engagement.
+Yet, traditional pharmacological frameworks implicitly assume that neurotransmitters diffuse through aqueous media before encountering their receptor [*ref rang & dales*]. This picture, while adequate for hydrophilic signaling molecules, becomes incomplete in the case of the endocannabinoid system (ECS) --- a central regulator of neural activity, and a major pharmacological target in neurological and metabolic disorders.
 
+Endocannabinoids are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids [*ref m/s*]. Their pronounced lipophilicity confines them primarily to the bilayer, where partitioning and lateral diffusion dominate their transport. In this configuration, ligand-receptor encounters do not occur in dilute aqueous solution, but within a structured and heterogeneous lipid matrix.
 
-The presynaptic membrane, where CB1 is largely localized, exhibits a rich lipid architecture --- in sterols, phospholipids and sphingolipids [*ref*] --- that maintains the mechanical and chemical environment necessary for synaptic transmission [*ref*]. However, this environment is susceptible to physiological and pathological remodeling. For instance, clinical lipidomic analyses have identified significant depletion in polyunsaturated fatty acids ($omega$--6) content in patients experiencing a first psychotic episode [*ref*]. From a biophysical perspective, such compositional shifts modify the fundamental properties of the bilayer, including acyl chain order, thickness, bending stiffness, ...
+The cannabinoid receptor type 1 (CB1), one of the most abundantly expressed G protein-coupled receptors (GPCRs) in the mammalian central nervous system, is itself embedded in this membrane environment. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk [*ref hurst, jakowiecki*]. In this view, the plasma membrane is more than a passive scaffold: it acts as a physicochemical pre-filter that governs which ligands reach the intramembrane binding pocket, and in what local concentration and orientation. The membrane therefore precedes receptor binding in the sequence of molecular events leading to activation.
 
-In this context, the efficacy of amphilic drugs is tied to their coupling with their lipid environment: the pharmacodynamic profile of a drug is not only a function of its affinity for the protein target, but also of its ability to navigate the free energy landscape imposed by its environment. Once ligand inserts the bilayer, it may locally perturb the nanoscopic organization of the membrane, while the mesoscopic mechanical constraints reciprocally limit the energetic configurations accessible to the drug.
+This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 [*ref thakur*]. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212-2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist. Despite their structural diversity, these ligands share a pronounced lipophilic character, reflected by high partition coefficients which strongly favor membrane partitioning prior to receptor engagement.
 
-Therefore, the ligand-membrane interaction should be regarded as a coupled physicochemical system, in which local lipid composition acts a critical determinant of drug partioning, diffusion, and ultimately, pharmacological potency. As such, drug-membrane coupling cannot be reduced to a secondary effect preceding receptor binding, but rather constitutes a layer of regulation in its own right. Characterizing this interaction is consequently essential for a comprehensive understanding of membrane-associated drug behavior.
+Importantly, this membrane environment is neither uniform nor static. The presynaptic bilayer --- where CB1 is highly expressed --- is enriched in sterols, phospholipids, and sphingolipids [*ref ahrends, lauwer?*] and defines the mechanical and chemical conditions under which signaling occurs. Lipidomic analyses have revealed significant compositional alterations under pathological conditions, including depletion of $omega$--3 and $omega$--6 polyunsaturated fatty acids (PUFAs) in patients experiencing a first psychotic episode [*ref le, frajerman*]. From a biophysical standpoint, such shifts modify acyl chain order, bilayer thickness, and bending stiffness ---  parameters that directly influence ligand partitioning and mobility.
+
+In this context, the efficacy of amphiphilic drugs cannot be reduced to their affinity for a protein target alone. Their pharmacodynamic profile emerges from a coupled interaction with the lipid environment, which defines the free-energy landscape governing insertion, orientation, and diffusion. Upon entering the bilayer, a ligand may locally perturb membrane organization, while mesoscopic mechanical constraints reciprocally restrict the energetic configurations accessible to the drug. Ligand--membrane interactions should therefore be regarded as a coupled physicochemical system rather than a secondary step preceding receptor binding. As a dynamic filter shaping when, where, and how ligands engage their targets, local bilayer properties may constitute previously underappreciated determinants of drug response and efficacy.
 
 == Lipid membranes as physicochemical systems
-- Riche comportement de phases (gel, liquid ordered, liquid disordered, lamellaire, micelles, ...)
-- Role des (un)saturations
-- L'effet du cholésterol dans la littérature
-- La diversité des têtes
-- Quelques données mécaniques si nécessaire (pression latérale etc)
+
+Lipid membranes are not homogeneous solvents but instead complex physicochemical systems, exhibiting rich phase behavior. This complexity is mainly brought by the diversity of their molecular constituents: headgroups, acyl chain saturation, and sterol content.
+
+The nomenclature of phospholipids reflects this structural organization. Species are typically designated by a four-letter code in which the first two letters indicate the acyl chains, while the last two specify the headgroup. For instance, POPC is for _1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine_, while SDPS denotes _1-stearoyl-2-docosahexaenoyl-sn-glycero-3-phospho-L-serine_.
+
+Headgroups vary in size, charge distribution and hydrogen-bonding capability, thereby defining the interfacial character of the membrane [*ref revue lipides kim & yoo*]. These variations impose distinct geometric constraints at the molecular level, which propagate to the collective organization of the bilayer. _Phosphatidylcholines_ (PC headgroup) exhibit an approximately cylindrical geometry favoring lamellar structures , whereas smaller headgroups such as _phosphatidylethanolamine_ (PE) introduce packing asymmetry and curvature stress.
+
+Beneath this interfacial layer, acyl chains determine the structure and dynamics of the hydrophobic core [*ref revue ali*]. Chain length and degree of unsaturation constitute the two primary variables. Increasing unsaturation enhances conformational flexibility: cis double bonds introduce kinks that disrupt tight packing, reduce chain order, and thus increasing membrane fluidity.
+
+Beyond phospholipids, cell membranes also contain other essential lipids like sterols and sphingomyelins. The most famous member of the sterol family is cholesterol, which plays a vital role in regulating membrane fluidity and structural stability.
+
+Variations in lipid composition give rise to distinct lamellar phase states [*ref*], notably,
+
+- the gel phase ($L_beta$), in which lipid tails are highly ordered and tightly packed, leading to reduced lateral mobility and increased membrane rigidity,
+- the liquid-ordered phase ($L_o$), typically promoted by cholesterol, combining high tail order with significant lateral mobility,
+- the liquid-disordered phase ($L_d$), characterized by lower chain order, increased flexibility, and enhanced lateral diffusion. 
+
+Although phase equilibria are temperature-dependent, physiological conditions typically constrain this parameter within a narrow range.
+
+In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing [*ref heberle*], leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipid rafts, this mesoscale structure reflects the balance between entropic mixing and favorable intermolecular interactions, and results in regions exhibiting various mechanical properties.
 
 == Ligand-membrane coupling
 - Insertion, coefficient de partition (logP)
@@ -97,6 +115,7 @@ Therefore, the ligand-membrane interaction should be regarded as a coupled physi
 - Etudier l'influence des lipides sur le couplage ligand-membrane
 - Explorer des effets d'échelles de la composition
 - Donner une interprétation multiéchelle du contexte lipidomique
+- Expliquer les différents indicateurs dont on va se servir (Sch, epaisseur, pourquoi on fait ça etc).
 
 
 
@@ -208,5 +227,7 @@ Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
 - PUFA
 - affinity
 - potency
-- lipid ?
+- efficacy
+- lipid
+- omega 3, omega 6
 - scaffold
