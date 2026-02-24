@@ -121,13 +121,22 @@ Within this framework, CP55,940 emerges as a particularly relevant model ligand 
 
 
 == Objectives
-- Etudier l'influence des lipides sur le couplage ligand-membrane
-- Explorer des effets d'échelles de la composition
-- Donner une interprétation multiéchelle du contexte lipidomique
-- Justifier l'approche 1 seul ligand
-- Expliquer les différents indicateurs dont on va se servir (Sch, epaisseur, pourquoi on fait ça etc).
 
+The present work seeks to characterize how ligand–membrane coupling evolves as a function of lipid composition, in the specific context of CB1 ligands, which are known to interact with the cellular membrane prior to receptor engagement.
 
+We aim, on the one hand, to quantify how ligand insertion perturbs the local structural organization of the bilayer. On the other hand, we examine how the membrane itself constrains and modulates ligand behavior, in a setting where the bilayer may constitute a privileged access pathway to CB1. This study is therefore deliberately positioned upstream of explicit receptor simulations.
+
+To address these questions, we employ molecular dynamics simulations across multiple scales. First, all-atom simulations are performed to characterize ligand insertion at high structural detail, allowing a precise description of local ordering, membrane organization, and associated fine structural rearrangements. These simulations are conducted in compositionally simple membranes, within well-identified phase states, in order to isolate elementary physicochemical mechanisms.
+
+We then extend the analysis to the coarse-grained level in order to probe larger systems and longer timescales. This allows us to explore compositional effects at a broader scale and to assess whether local trends identified at the atomistic level persist in more complex membrane environments.
+
+In particular, coarse--grained models make it possible to move beyond idealized binary mixtures and incorporate lipid compositions inspired by experimental lipidomics data. This is especially relevant for investigating variations in PUFA content, whose imbalance has been reported in pathological contexts. By doing so, we aim to connect controlled physicochemical models with membrane compositions that are pharmacologically and medically meaningful.
+
+To isolate membranotropic effects from ligand--specific variability, we adopt a single ligand strategy centered on CP55,940. This approach allows us to treat the ligand as a controlled probe while systematically interrogating the influence of lipid composition. By fixing molecular architecture on the ligand side, compositional changes in the bilayer become the primary source of variability.
+
+Accordingly, our main analytical tools consist of established membrane descriptors: membrane thickness, acyl chain order parameters, density profiles, PMFs, hydration profiles ... These indicators provide complementary structural and thermodynamic information and will be introduced and discussed systematically throughout the study.
+
+Fundamentally, this work is guided by the idea that membrane composition must be regarded as an essential variable rather than a passive background. If the coupling is sensitive  to lipid organization, then any variations in acyl chain saturation, sterol content, or PUFA balance may alter drug behavior in ways that cannot be captured by protein affinity alone. The broader perspective of this research is to eventually clarify to what extent the membrane itself participates in shaping pharmacological outcomes ; however, our current study remains focused on the mechanics of coupling.
 
 = Methods (3-4 pages)
 
