@@ -73,13 +73,13 @@ In a highly lipophilic environment, the membrane cannot be regarded as a passive
 
 Yet, traditional pharmacological frameworks implicitly assume that neurotransmitters diffuse through aqueous media before encountering their receptor [*ref rang & dales*]. This picture, while adequate for hydrophilic signaling molecules, becomes incomplete in the case of the endocannabinoid system (ECS) --- a central regulator of neural activity, and a major pharmacological target in neurological and metabolic disorders.
 
-Endocannabinoids are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids [*ref m/s*]. Their pronounced lipophilicity confines them primarily to the bilayer, where partitioning and lateral diffusion dominate their transport. In this configuration, ligand-receptor encounters do not occur in dilute aqueous solution, but within a structured and heterogeneous lipid matrix.
+Endocannabinoids are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids [*ref m/s*]. This biochemical origin confers lipophilic properties, meaning that these molecules preferentially partition into hydrophobic environments rather than the surrounding aqueous phase. Their transport, diffusion and possibly their functional interactions are therefore conditioned by the surrounding lipid membranes.
 
 The cannabinoid receptor type 1 (CB1), one of the most abundantly expressed G protein-coupled receptors (GPCRs) in the mammalian central nervous system, is itself embedded in this membrane environment. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk [*ref hurst, jakowiecki*]. In this view, the plasma membrane is more than a passive scaffold: it acts as a physicochemical pre-filter that governs which ligands reach the intramembrane binding pocket, and in what local concentration and orientation. The membrane therefore precedes receptor binding in the sequence of molecular events leading to activation.
 
-This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 [*ref thakur*]. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212-2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist. Despite their structural diversity, these ligands share a pronounced lipophilic character, reflected by high partition coefficients which strongly favor membrane partitioning prior to receptor engagement.
+This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 [*ref thakur*]. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212-2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist. Despite their structural diversity, these ligands share a pronounced lipophilic character, reflected by high partition coefficients which should strongly favor membrane partitioning prior to receptor engagement.
 
-Importantly, this membrane environment is neither uniform nor static. The presynaptic bilayer --- where CB1 is highly expressed --- is enriched in sterols, phospholipids, and sphingolipids [*ref ahrends, lauwer?*] and defines the mechanical and chemical conditions under which signaling occurs. Lipidomic analyses have revealed significant compositional alterations under pathological conditions, including depletion of $omega$--3 and $omega$--6 polyunsaturated fatty acids (PUFAs) in patients experiencing a first psychotic episode [*ref le, frajerman*]. From a biophysical standpoint, such shifts modify acyl chain order, bilayer thickness, and bending stiffness ---  parameters that directly influence ligand partitioning and mobility.
+The membrane environment is neither uniform nor static. The presynaptic bilayer --- where CB1 is highly expressed --- is enriched in sterols, phospholipids, and sphingolipids [*ref ahrends, lauwer?*] and defines the mechanical and chemical conditions under which signaling occurs. Lipidomic analyses have revealed significant compositional alterations under pathological conditions, including depletion of $omega$--3 and $omega$--6 polyunsaturated fatty acids (PUFAs) in patients experiencing a first psychotic episode [*ref le, frajerman*]. From a biophysical standpoint, such shifts modify acyl chain order, bilayer thickness, and bending stiffness ---  parameters that directly influence ligand partitioning and mobility.
 
 In this context, the efficacy of amphiphilic drugs cannot be reduced to their affinity for a protein target alone. Their pharmacodynamic profile emerges from a coupled interaction with the lipid environment, which defines the free-energy landscape governing insertion, orientation, and diffusion. Upon entering the bilayer, a ligand may locally perturb membrane organization, while mesoscopic mechanical constraints reciprocally restrict the energetic configurations accessible to the drug. Ligand--membrane interactions should therefore be regarded as a coupled physicochemical system rather than a secondary step preceding receptor binding. As a dynamic filter shaping when, where, and how ligands engage their targets, local bilayer properties may constitute previously underappreciated determinants of drug response and efficacy.
 
@@ -91,11 +91,11 @@ The nomenclature of phospholipids reflects this structural organization. Species
 
 Headgroups vary in size, charge distribution and hydrogen-bonding capability, thereby defining the interfacial character of the membrane [*ref revue lipides kim & yoo*]. These variations impose distinct geometric constraints at the molecular level, which propagate to the collective organization of the bilayer. _Phosphatidylcholines_ (PC headgroup) exhibit an approximately cylindrical geometry favoring lamellar structures , whereas smaller headgroups such as _phosphatidylethanolamine_ (PE) introduce packing asymmetry and curvature stress.
 
-Beneath this interfacial layer, acyl chains determine the structure and dynamics of the hydrophobic core [*ref revue ali*]. Chain length and degree of unsaturation constitute the two primary variables. Increasing unsaturation enhances conformational flexibility: cis double bonds introduce kinks that disrupt tight packing, reduce chain order, and thus increasing membrane fluidity.
+Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids [*ref revue ali*]. Chain length and degree of unsaturation constitute the two primary levers to module the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ cis double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity.
 
-Beyond phospholipids, cell membranes also contain other essential lipids like sterols and sphingomyelins. The most famous member of the sterol family is cholesterol, which plays a vital role in regulating membrane fluidity and structural stability.
+Cell membranes also contain other essential lipids like sterols and sphingomyelins. The most famous member of the sterol family is cholesterol, which plays a vital role in regulating membrane fluidity and structural stability.
 
-Variations in lipid composition give rise to distinct lamellar phase states [*ref*], notably,
+These variations in lipid composition give rise to distinct lamellar phase states [*ref*], notably,
 
 - the gel phase ($L_beta$), in which lipid tails are highly ordered and tightly packed, leading to reduced lateral mobility and increased membrane rigidity,
 - the liquid-ordered phase ($L_o$), typically promoted by cholesterol, combining high tail order with significant lateral mobility,
@@ -111,9 +111,9 @@ While lipophilicity is often invoked to rationalize membrane affinity, a single 
 
 Another limitation is that logP constitutes a purely thermodynamic descriptor and therefore provides little insight into the microscopic mechanism of insertion. It does not inform on whether a ligand preferentially enters through hydrophobic regions, whether it should reorient upon insertion, or how it organizes once embedded within the bilayer. Generally, it is advised to compute potential of means force (PMFs) [*ref*] --- that is, free--energy profiles evaluated along a chosen reaction coordinate --- if one seeks better descriptions. PMFs provide access to the energetic cost associated with membrane entry, identify possible interfacial minima and reveal insertion barriers that could not be inferred from a global partition coefficient alone.
 
-From this perspective, the membrane can be treated as an energy landscape experienced by the ligand. While such an approach is necessary to quantify insertion and identify potential barriers, it remains a reduced description of the interaction.  The question arises: what is the physical nature of ligand-membrane? A first level of consideration is steric. Much like inclusions in liquid crystals, an inserted ligand can be expected to behave as a local defect, perturbing lipid packing and altering the orientational order of neighboring acyl chains. Additional mechanical effects may also emerge; the ligand may locally displace lipids upon insertion, generating curvature stress or elastic deformation of the surrounding [*ref*].
+From this perspective, the membrane can be treated as an energy landscape experienced by the ligand. While such an approach is necessary to quantify insertion and identify potential barriers, it remains a reduced description of the interaction.  The question arises: what is the physical nature of this interaction? A first level of consideration is steric. Much like inclusions in liquid crystals, an inserted ligand can be expected to behave as a local defect, perturbing lipid packing and altering the orientational order of neighboring acyl chains. Additional mechanical effects may also emerge; the ligand may locally displace lipids upon insertion, generating curvature stress or elastic deformation of the surrounding [*ref*].
 
-Beyond steric and mechanical aspects, chemical and electrostatic contributions must be considered. The membrane interface is characterized by a heterogeneous distribution of charges and dipoles, and screening effects are not necessarily uniform across the interfacial region. From a physical standpoint, the bilayer thus constitutes an electromagnetic environment, within which local interactions may further modulate ligand behavior.
+Chemical and electrostatic contributions must also be considered. The membrane interface is characterized by a certain distribution of charges and dipoles, and screening effects are not necessarily uniform across the interfacial region. From a physical standpoint, the bilayer constitutes an electromagnetic environment, within which local interactions may further modulate ligand behavior.
 
 Within this framework, CP55,940 emerges as a particularly relevant model ligand for CB1. Beyond its established pharmacological profile [*ref*] as a potent CB1 agonist, it presents physicochemical characteristics that make it especially suitable for investigating ligand–-membrane coupling. It exhibits a relatively high partition coefficient, consistent with strong membrane affinity. Its molecular architecture combines an aromatic core and a hydrophobic aliphatic moiety, favoring insertion toward the bilayer interior, with additional polar functional groups capable of interacting with interfacial regions. Such amphiphilic balance makes it structurally compatible with prolonged residence within a bilayer while maintaining the ability to sample different insertion depths and orientations. It is therefore reasonable to treat CP55,940 as the molecular probe it has effectively become within the CB1 literature.
 
@@ -128,7 +128,7 @@ To address these questions, we perform molecular dynamics simulations at differe
 
 We then extend the analysis to a coarse--grained level and to larger systems and longer timescales. This allows us to explore compositional effects at a broader scale and to assess whether local trends identified at the atomistic level persist in more complex membrane environments.
 
-In particular, coarse--grained models make it possible to move beyond idealized binary mixtures and incorporate lipid compositions inspired by experimental lipidomics data. This is especially relevant for investigating variations in PUFA content, whose imbalance has been reported in pathological contexts. By doing so, we aim to connect controlled physicochemical models with membrane compositions that are pharmacologically and medically meaningful.
+In particular, coarse--grained models make it possible to move beyond idealized binary mixtures and incorporate lipid compositions inspired by experimental lipidomics data. This is especially relevant for investigating variations in PUFAs content, whose imbalance has been reported in pathological contexts. By doing so, we aim to connect controlled physicochemical models with membrane compositions that are pharmacologically and medically meaningful.
 
 Accordingly, our main analytical tools consist of established membrane descriptors: membrane thickness, acyl chain order parameters, density profiles, PMFs, hydration profiles ... These indicators provide complementary structural and thermodynamic information and will be introduced and discussed systematically throughout the study.  In line with this approach, we rely on a single ligand -- CP55,940 -- used as a probe in order to isolate membranotropic effects from ligand-specific variability.
 
@@ -139,21 +139,41 @@ Fundamentally, this work is guided by the idea that membrane composition must be
 Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
 
 == All-atom molecular dynamics 
+replica ?
+=== Membrane compositions, system preparation
 
-=== System composition
-- Membrane types (gel, fluide, enrichies en SAPC/SDPC, etc.)
-- Insertion du ligand
+All--atom membrane systems were constructed using the CHARMM--GUI membrane builder. Symmetric bilayers composed of 100 lipids per leaflet were generated under periodic boundary conditions, resulting in lamellar multilayer systems separated by aqueous slabs.
+
+Two reference phospholipids were primarily considered in order to explore distinct membrane physical states. DOPC bilayers were used to represent a fluid liquid--disordered phase at physiological temperature, while DPPC membranes were simulated at 25 °C, a temperature well below the main phase transition temperature of DPPC ($tilde 314$ K). This ensures that the membrane remains in a stable gel-like phase during the simulations and avoids the strong fluctuations associated with the transition regime [*refs*]. Working with these two systems allows us to contrast ligand behavior in environments characterized by markedly different packing and chain ordering properties.
+
+In addition to these reference membranes, compositional perturbations were introduced by partially substituting the host lipids with polyunsaturated species. In practice, 10 % of the lipids were replaced by either SAPC ($omega$--6) or SDPC ($omega$--3), leading to six distinct membrane compositions in total. These substitutions introduce highly unsaturated acyl chains into otherwise well-defined bilayers and allow us to probe the influence of polyunsaturated lipids on ligand–membrane interactions.
+
+Due to the planar geometry of the bilayer and the use of periodic boundary conditions, the simulated systems naturally adopt a stacked lamellar configuration. To avoid interactions between periodic images of adjacent membranes, a sufficiently large aqueous slab was introduced, resulting in a hydration level of approximately 45 water molecules per lipid [*ref*]. Sodium and chloride ions were added to reproduce an isotonic salt concentration (0.15 M NaCl) representative of physiological conditions.
+
+System preparation followed the standard equilibration procedure provided by CHARMM--GUI. After energy minimization, a restrained NVT equilibration was performed for 500 ps, followed by a restrained NPT equilibration of 1 ns using Berendsen pressure coupling. The production equilibration runs were then performed for 100–300 ns, depending on membrane composition, to allow the bilayers to reach equilibrium before further analysis. This was especially important for gel-phase membranes, which exhibit slower lipid dynamics and therefore require longer equilibration times [*ref*].
+
+
+The ligand CP55,940 was introduced at concentrations reaching up to 10 mol % relative to the lipid content, after equilibration of membranes. To ease spontaneous insertion while avoiding artificial aggregation in the aqueous phase, ligand molecules were initially positioned close to the membrane surface. A pulling restraint along the membrane normal was applied during the early stages of equilibration in order to keep the ligands near the bilayer interface. After ligand insertion, an additional system relaxation step was performed. The systems were first subjected to energy minimization in order to remove possible steric clashes introduced during ligand placement. A short equilibration stage was then carried out before starting the production simulations.
 
 === Force field and simulation parameters
-- Justifier charmm36m
-- Le choix de l'eau
-- Le choix des barostats, thermostats
-- Les pas de temps, la stratégie d'équilibration
-- Durée des simulations, check de convergences
 
-=== Energy considerations
-- PMF, Energy profiles
+All molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations [*ref yu2018*].
 
+Alternative membrane force fields exist, including so-called Berger model for lipids. However, CHARMM36m is known to correctly treat polar functional groups such as hydroxyl (-OH) moieties, which are relevant for describing ligand--membrane interactions involving hydrogen bonding at the membrane interface.
+
+Ligand parameters for CP55,940 were generated using CGenFF, through the ligand reader & modeler module of CHARMM-GUI [*ref kim2017*]. Water molecules were represented using the TIP3P model, consistent with the CHARMM parametrization. This model is commonly employed in membrane simulations and remains computationally efficient compared to more complex water models due to its lower number of degrees of freedom.
+
+The equations of motion were integrated using a 2 fs timestep, with all bonds involving hydrogen atoms constrained using the LINCS algorithm. Long-range electrostatic interactions were treated using the particle mesh Ewald (PME) method, with a real-space cutoff of 12$angstrom$. The same cutoff was applied to short-range van der Waals interactions.
+
+Temperature was controlled using a Nosé–Hoover thermostat, while pressure was maintained using a Parrinello--Rahman barostat with semi--isotropic pressure coupling, allowing independent fluctuations in the membrane plane and along the bilayer normal.
+
+For gel--like membrane systems, the pressure coupling time constant was slightly relaxed from 5 to 10 in order to prevent membrane buckling, a common defect in highly ordered bilayers where lateral stresses may induce the inflate of the membrane [*ref* plein de refs].
+
+=== Umbrella sampling and PMF calculations
+To do.
+
+=== Observables
+Idée : parler des APL / Bilayer / SCC, notamment qu'on s'en sert pour verifier si on converge vers un equilibre ou pas, au moins en les comparant avec des membranes pures DOPC ou DPPC qui sont bien tabulées dans la littérature.
 
 == Coarse-grained simulations
 - Martini 
@@ -167,7 +187,7 @@ Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
 - ns/day performance
 - GPU/CPU usage 
 - coût total en temps de calcul
-- Comment être reproductible?
+- Comment être reproductible? les replica
 
 =  Atomistic results : lipid dependent ligand-membrane coupling (5-6 pages)
 
@@ -217,7 +237,7 @@ Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
 - Positioning within broader scientific landscape
 
 == Methodological strengths and limitations
-- Absence fo receptor
+- Absence of receptor
 - Sampling limitations 
 - Force field consideration 
 
