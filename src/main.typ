@@ -157,6 +157,8 @@ The ligand CP55,940 was introduced at concentrations reaching up to 10 mol % rel
 
 === Force field and simulation parameters
 
+*NOTES* Il faudra sûrement revoir cette partie pour expliquer un peu mieux la construction des membranes gels.
+
 All molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations [*ref yu2018*].
 
 Alternative membrane force fields exist, including so-called Berger model for lipids. However, CHARMM36m is known to correctly treat polar functional groups such as hydroxyl (-OH) moieties, which are relevant for describing ligand--membrane interactions involving hydrogen bonding at the membrane interface.
@@ -170,7 +172,36 @@ Temperature was controlled using a Nosé–Hoover thermostat, while pressure was
 For gel--like membrane systems, the pressure coupling time constant was slightly relaxed from 5 to 10 in order to prevent membrane buckling, a common defect in highly ordered bilayers where lateral stresses may induce the inflate of the membrane [*ref* plein de refs].
 
 === Umbrella sampling and PMF calculations
-To do.
+
+To characterize ligand insertion beyond the simple partition coefficient, we considered potentials of mean force along a chosen reaction coordinate. In the present case, this coordinate was defined as the projection of the ligand center of mass along the membrane normal (z--axis), which provides a natural description of the insertion process.
+
+From statistical mechanics, the PMF corresponds to a free--energy profile obtained by projecting the phase space distribution onto this reduced reaction coordinate. If $x$ denotes a microscopic configuration of the system, and if $U(x)$ is its associated potential energy, the canonical probability distribution is given by the Boltzmann law,
+
+$
+    P(x) = frac(1,Z) e^(- beta U(x))
+$
+
+where $beta = 1 \/k_B T$ and $Z$ is the partition function. Then, the probability associated with a given value of the reaction coordinate $xi$ is obtained by integrating out all remaining degrees of freedom, yielding,
+
+$
+    P( xi ) = frac(1,Z) integral dif x  e^(- beta U(x)) delta ( xi - xi(x) )
+$
+
+with $delta$ the Dirac distribution. Finally, the corresponding free--energy profile is defined, up to an additive constant, as
+
+$
+    F(xi) = - k_B T ln P( xi ) + #text[constant]
+$
+
+Broadly speaking, this quantity can be interpreted as an effective free--energy obtained after averaging over all microscopic configurations compatible with a given position of the ligand along the membrane normal.
+
+In that sense, the free--energy profile can be reconstructed by varying the reaction coordinate of the ligand and, at each fixed position, estimating the associated probability distribution while allowing the ligand to explore the remaining degrees of freedom. Repeating this procedure over a series of overlapping windows gives access to the full profile. This procedure is known as umbrella sampling, and the ligand is maintained around a given value of the reaction coordinate by means of a harmonic biasing potential.
+
+In practice, initial configurations for these windows were generated using _steered molecular dynamics_ (SMD). After equilibration of the membrane--ligand system, the ligand was gradually pulled along the membrane normal, starting from the aqueous phase toward the bilayer center.
+
+Configurations were extracted along this trajectory and then used as starting points for the umbrella sampling simulations. The distributions obtained in each window were subsequently combined using the weighted histogram analysis method (WHAM) in order to reconstruct the unbiased PMF, since the harmonic potential introduces a bias.
+
+In the present work, PMF calculations were restricted to DOPC membranes. This choice was motivated by their fluid nature, which ensures sufficient molecular mobility and facilitates convergence of the free--energy profile along the chosen reaction coordinate. During steered molecular dynamics, the ligand was pulled along the membrane normal using a harmonic biasing potential, with a force constant of approximately $600 #text[ kJ mol]^(-1)#text[nm]^(-2)$ and a constant pulling rate of $1 times 10^(-4) #text[ nm ps]^(-1)$.
 
 === Observables
 Idée : parler des APL / Bilayer / SCC, notamment qu'on s'en sert pour verifier si on converge vers un equilibre ou pas, au moins en les comparant avec des membranes pures DOPC ou DPPC qui sont bien tabulées dans la littérature.
