@@ -6,7 +6,9 @@
 #set page(margin: (x:25mm, y:auto), numbering : "1")
 #set text(font:"Times New Roman", size:12pt)
 #set heading(numbering : "1.")
+#show heading: set text(font: "New York Small")
 #set par(justify: true)
+#set text(lang: "en", hyphenate: true)
 #set math.mat(delim: "[")
 #set figure.caption(separator: [ --- ])
 
@@ -92,7 +94,7 @@ The nomenclature of phospholipids reflects this structural organization. Species
 
 Headgroups vary in size, charge distribution and hydrogen-bonding capability, thereby defining the interfacial character of the membrane [*ref revue lipides kim & yoo*]. These variations impose distinct geometric constraints at the molecular level, which propagate to the collective organization of the bilayer. _Phosphatidylcholines_ (PC headgroup) exhibit an approximately cylindrical geometry favoring lamellar structures , whereas smaller headgroups such as _phosphatidylethanolamine_ (PE) introduce packing asymmetry and curvature stress.
 
-Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids [*ref revue ali*]. Chain length and degree of unsaturation constitute the two primary levers to module the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ cis double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity.
+Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids [*ref revue ali*]. Chain length and degree of unsaturation constitute the two primary levers to module the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ _cis_ double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity.
 
 Cell membranes also contain other essential lipids like sterols and sphingomyelins. The most famous member of the sterol family is cholesterol, which plays a vital role in regulating membrane fluidity and structural stability.
 
@@ -210,7 +212,7 @@ In the present work, PMF calculations were restricted to DOPC membranes. This ch
 
 We characterized the structural and thermodynamic properties of the membrane using a set of standard observables, commonly employed in the field, probing the global state of the membrane and its local response to ligand insertion.
 
-The first observable is the so-called area per lipid (APL), defined as the average surface occupied by a lipid in the membrane plane. APL is particularly sensitive to membrane composition and phase state, and provides a direct measure of lipid packing in a given leaflet. It also serves as a practical indicator of equilibration, as reference values for pure DOPC and DPPC membranes are well documented in the literature [*ref*]. The area per lipid (APL) was computed using a Voronoi tessellation of the membrane plane [*ref dans lipyphilic*]. Each lipid was assigned an effective area corresponding to its Voronoi cell, constructed from the lateral positions of lipid headgroups. The APL was then obtained by averaging over all lipids within a leaflet.
+The first observable is the so-called area per lipid (APL), defined as the average surface occupied by a lipid in the membrane plane. APL is particularly sensitive to membrane composition and phase state, and provides a direct measure of lipid packing in a given leaflet. It also serves as a practical indicator of equilibration, as reference values for pure DOPC and DPPC membranes are well documented in the literature [*ref*]. The area per lipid was computed using a Voronoi tessellation of the membrane plane [*ref dans lipyphilic*]. Each lipid was assigned an effective area corresponding to its Voronoi cell, constructed from the lateral positions of lipid headgroups. The APL was then obtained by averaging over all lipids within a leaflet.
 
 The membrane thickness was measured as the average distance between the phosphate groups of the two opposing leaflets. Variations in thickness may reflect both compositional effects and asymmetry induced by local perturbations. Density profiles were evaluated by the use of histogram of atomic positions along a given axis, providing the average spatial distribution of molecular species and allowing the ligand position within the bilayer to be identified.
 
