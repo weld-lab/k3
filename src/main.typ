@@ -1,3 +1,4 @@
+
 #import "@preview/physica:0.9.5":*
 
 
@@ -94,6 +95,8 @@ Headgroups vary in size, charge distribution and hydrogen-bonding capability, th
 Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids [*ref revue ali*]. Chain length and degree of unsaturation constitute the two primary levers to module the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ cis double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity.
 
 Cell membranes also contain other essential lipids like sterols and sphingomyelins. The most famous member of the sterol family is cholesterol, which plays a vital role in regulating membrane fluidity and structural stability.
+
+*INSÉRER IMAGE DIAGRAMME DE PHASE DONNÉ PAR FLORENTIN, ARTICLE*
 
 These variations in lipid composition give rise to distinct lamellar phase states [*ref*], notably,
 
@@ -204,7 +207,25 @@ Configurations were extracted along this trajectory and then used as starting po
 In the present work, PMF calculations were restricted to DOPC membranes. This choice was motivated by their fluid nature, which ensures sufficient molecular mobility and facilitates convergence of the free--energy profile along the chosen reaction coordinate. During steered molecular dynamics, the ligand was pulled along the membrane normal using a harmonic biasing potential, with a force constant of approximately $600 #text[ kJ mol]^(-1)#text[nm]^(-2)$ and a constant pulling rate of $1 times 10^(-4) #text[ nm ps]^(-1)$.
 
 === Observables
-Idée : parler des APL / Bilayer / SCC, notamment qu'on s'en sert pour verifier si on converge vers un equilibre ou pas, au moins en les comparant avec des membranes pures DOPC ou DPPC qui sont bien tabulées dans la littérature.
+
+We characterized the structural and thermodynamic properties of the membrane using a set of standard observables, commonly employed in the field, probing the global state of the membrane and its local response to ligand insertion.
+
+The first observable is the so-called area per lipid (APL), defined as the average surface occupied by a lipid in the membrane plane. APL is particularly sensitive to membrane composition and phase state, and provides a direct measure of lipid packing in a given leaflet. It also serves as a practical indicator of equilibration, as reference values for pure DOPC and DPPC membranes are well documented in the literature [*ref*]. The area per lipid (APL) was computed using a Voronoi tessellation of the membrane plane [*ref dans lipyphilic*]. Each lipid was assigned an effective area corresponding to its Voronoi cell, constructed from the lateral positions of lipid headgroups. The APL was then obtained by averaging over all lipids within a leaflet.
+
+The membrane thickness was measured as the average distance between the phosphate groups of the two opposing leaflets. Variations in thickness may reflect both compositional effects and asymmetry induced by local perturbations. Density profiles were evaluated by the use of histogram of atomic positions along a given axis, providing the average spatial distribution of molecular species and allowing the ligand position within the bilayer to be identified.
+
+Hydration profiles were computed by counting the number of water molecules in the vicinity of specific moieties (polar headgroups, glycerol backbone, phenol, ...), using a distance-based cutoff. This cutoff was defined from the position of the first minimum in the radial distribution function between the selected group and water, and is typically of the order of 3.5 $angstrom$ *A JUSTIFIER/MONTRER/VERIFIER*. Hydration provides a measure of solvent penetration at the membrane interface and is particularly relevant for characterizing this region, where polar interactions and hydrogen bonding play a significant role.
+
+
+The orientational order of lipid acyl chains was also quantified, using the deuterium order parameter. This quantity is a direct measure of chain alignements with respect to the membrane normal and is defined as,
+
+$
+    S_#text[CD] = frac(1,2) angle.l 3 cos^2 theta - 1 angle.r
+$
+
+where $theta$ is the angle between a given C-H bond vector and the normal, and where $angle.l dot angle.r$ denotes a statistical average over time and lipids of the same species. The order parameter was computed for each carbon atom along the acyl chains, resulting in a position-dependent profile that reflects the variation of chain ordering from the headgroup region to the bilayer core.
+
+Beyond these observables, molecular dynamics simulations can still be viewed as _in silico_ experiments#footnote[_Unfortunately, “simulation” has become increasingly misused to mean nothing more than “calculation.”_ -- William L. Jorgensen [*ref*]] and the trajectories provides additional qualitative insight into ligand behavior, such as insertion pathways or fine details of molecular arrangements.
 
 == Coarse-grained simulations
 - Martini 
@@ -220,7 +241,7 @@ Idée : parler des APL / Bilayer / SCC, notamment qu'on s'en sert pour verifier 
 - coût total en temps de calcul
 - Comment être reproductible? les replica
 
-=  Atomistic results : lipid dependent ligand-membrane coupling (5-6 pages)
+=  Atomistic results: lipid dependent ligand-membrane coupling (5-6 pages)
 
 == Insertion, orientation
 - Gel vs fluid comparison
