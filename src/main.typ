@@ -66,7 +66,7 @@
 #outline()
 
 #pagebreak()
-#set page(columns:1, header:[_À venir_])
+#set page(columns:1, header:[_Ligand-membrane coupling as a pre-filter for receptor engagement_])
 
 = Introduction (4-5 pages)
 
@@ -74,15 +74,15 @@
 
 In a highly lipophilic environment, the membrane cannot be regarded as a passive element. Being itself a lipid assembly, it inevitably becomes the primary physicochemical landscape for molecules exhibiting strong hydrophobic character.
 
-Yet, traditional pharmacological frameworks implicitly assume that neurotransmitters diffuse through aqueous media before encountering their receptor [*ref rang & dales*]. This picture, while adequate for hydrophilic signaling molecules, becomes incomplete in the case of the endocannabinoid system (ECS) --- a central regulator of neural activity, and a major pharmacological target in neurological and metabolic disorders.
+Yet, traditional pharmacological frameworks implicitly assume that neurotransmitters diffuse through aqueous media before encountering their receptor @ritter_rang_2020. This picture, while adequate for hydrophilic signaling molecules, becomes incomplete in the case of the endocannabinoid system (ECS) --- a central regulator of neural activity, and a major pharmacological target in neurological and metabolic disorders.
 
-Endocannabinoids are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids [*ref m/s*]. This biochemical origin confers lipophilic properties, meaning that these molecules preferentially partition into hydrophobic environments rather than the surrounding aqueous phase. Their transport, diffusion and possibly their functional interactions are therefore conditioned by the surrounding lipid membranes.
+Endocannabinoids are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids @venance_systeme_2004. This biochemical origin confers lipophilic properties, meaning that these molecules preferentially partition into hydrophobic environments rather than the surrounding aqueous phase. Their transport, diffusion and possibly their functional interactions are therefore conditioned by the surrounding lipid membranes.
 
-The cannabinoid receptor type 1 (CB1), one of the most abundantly expressed G protein-coupled receptors (GPCRs) in the mammalian central nervous system, is itself embedded in this membrane environment. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk [*ref hurst, jakowiecki*]. In this view, the plasma membrane is more than a passive scaffold: it acts as a physicochemical pre-filter that governs which ligands reach the intramembrane binding pocket, and in what local concentration and orientation. The membrane therefore precedes receptor binding in the sequence of molecular events leading to activation.
+The cannabinoid receptor type 1 (CB1), one of the most abundantly expressed G protein-coupled receptors (GPCRs) in the mammalian central nervous system, is itself embedded in this membrane environment. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk @hurst_lipid_2010 @jakowiecki_hydrophobic_2020. In this view, the plasma membrane is more than a passive scaffold: it acts as a physicochemical pre-filter that governs which ligands reach the intramembrane binding pocket, and in what local concentration and orientation. The membrane therefore precedes receptor binding in the sequence of molecular events leading to activation.
 
-This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 [*ref thakur*]. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212-2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist. Despite their structural diversity, these ligands share a pronounced lipophilic character, reflected by high partition coefficients which should strongly favor membrane partitioning prior to receptor engagement.
+This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 @thakur_cb1_2005. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212-2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist. Despite their structural diversity, these ligands share a pronounced lipophilic character, reflected by high partition coefficients which should strongly favor membrane partitioning prior to receptor engagement.
 
-The membrane environment is neither uniform nor static. The presynaptic bilayer --- where CB1 is highly expressed --- is enriched in sterols, phospholipids, and sphingolipids [*ref ahrends, lauwer?*] and defines the mechanical and chemical conditions under which signaling occurs. Lipidomic analyses have revealed significant compositional alterations under pathological conditions, including depletion of $omega$--3 and $omega$--6 polyunsaturated fatty acids (PUFAs) in patients experiencing a first psychotic episode [*ref le, frajerman*]. From a biophysical standpoint, such shifts modify acyl chain order, bilayer thickness, and bending stiffness ---  parameters that directly influence ligand partitioning and mobility.
+The membrane environment is neither uniform nor static. The presynaptic bilayer --- where CB1 is highly expressed --- is enriched in sterols, phospholipids, and sphingolipids @ahrends_synaptoneurolipidomics_2025 @lauwers_membrane_2016 and defines the mechanical and chemical conditions under which signaling occurs. Lipidomic analyses have revealed significant compositional alterations under pathological conditions, including depletion of $omega$--3 and $omega$--6 polyunsaturated fatty acids (PUFAs) in patients experiencing a first psychotic episode @le_analysis_2023 @frajerman_lipides_2020. From a biophysical standpoint, such shifts modify acyl chain order, bilayer thickness, and bending stiffness ---  parameters that directly influence ligand partitioning and mobility.
 
 In this context, the efficacy of amphiphilic drugs cannot be reduced to their affinity for a protein target alone. Their pharmacodynamic profile emerges from a coupled interaction with the lipid environment, which defines the free-energy landscape governing insertion, orientation, and diffusion. Upon entering the bilayer, a ligand may locally perturb membrane organization, while mesoscopic mechanical constraints reciprocally restrict the energetic configurations accessible to the drug. Ligand--membrane interactions should therefore be regarded as a coupled physicochemical system rather than a secondary step preceding receptor binding. As a dynamic filter shaping when, where, and how ligands engage their targets, local bilayer properties may constitute previously underappreciated determinants of drug response and efficacy.
 
@@ -92,9 +92,9 @@ Lipid membranes are not homogeneous solvents but instead complex physicochemical
 
 The nomenclature of phospholipids reflects this structural organization. Species are typically designated by a four-letter code in which the first two letters indicate the acyl chains, while the last two specify the headgroup. For instance, POPC is for _1-palmitoyl-2-oleoyl-sn-glycero-3-phosphocholine_, while SDPS denotes _1-stearoyl-2-docosahexaenoyl-sn-glycero-3-phospho-L-serine_.
 
-Headgroups vary in size, charge distribution and hydrogen-bonding capability, thereby defining the interfacial character of the membrane [*ref revue lipides kim & yoo*]. These variations impose distinct geometric constraints at the molecular level, which propagate to the collective organization of the bilayer. _Phosphatidylcholines_ (PC headgroup) exhibit an approximately cylindrical geometry favoring lamellar structures , whereas smaller headgroups such as _phosphatidylethanolamine_ (PE) introduce packing asymmetry and curvature stress.
+Headgroups vary in size, charge distribution and hydrogen-bonding capability, thereby defining the interfacial character of the membrane @kim_decoding_2026. These variations impose distinct geometric constraints at the molecular level, which propagate to the collective organization of the bilayer. _Phosphatidylcholines_ (PC headgroup) exhibit an approximately cylindrical geometry favoring lamellar structures , whereas smaller headgroups such as _phosphatidylethanolamine_ (PE) introduce packing asymmetry and curvature stress.
 
-Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids [*ref revue ali*]. Chain length and degree of unsaturation constitute the two primary levers to module the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ _cis_ double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity.
+Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids @ali_review_2023. Chain length and degree of unsaturation constitute the two primary levers to module the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ _cis_ double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity.
 
 Cell membranes also contain other essential lipids like sterols and sphingomyelins. The most famous member of the sterol family is cholesterol, which plays a vital role in regulating membrane fluidity and structural stability.
 
@@ -164,11 +164,11 @@ The ligand CP55,940 was introduced at concentrations reaching up to 10 mol % rel
 
 *NOTES* Il faudra sûrement revoir cette partie pour expliquer un peu mieux la construction des membranes gels.
 
-All molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations [*ref yu2018*].
+All molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations @yu_update_2020.
 
 Alternative membrane force fields exist, including so-called Berger model for lipids. However, CHARMM36m is known to correctly treat polar functional groups such as hydroxyl (-OH) moieties, which are relevant for describing ligand--membrane interactions involving hydrogen bonding at the membrane interface.
 
-Ligand parameters for CP55,940 were generated using CGenFF, through the ligand reader & modeler module of CHARMM-GUI [*ref kim2017*]. Water molecules were represented using the TIP3P model, consistent with the CHARMM parametrization. This model is commonly employed in membrane simulations and remains computationally efficient compared to more complex water models due to its lower number of degrees of freedom.
+Ligand parameters for CP55,940 were generated using CGenFF, through the ligand reader & modeler module of CHARMM-GUI @kim_charmm-gui_2017. Water molecules were represented using the TIP3P model, consistent with the CHARMM parametrization. This model is commonly employed in membrane simulations and remains computationally efficient compared to more complex water models due to its lower number of degrees of freedom.
 
 The equations of motion were integrated using a 2 fs timestep, with all bonds involving hydrogen atoms constrained using the LINCS algorithm. Long-range electrostatic interactions were treated using the particle mesh Ewald (PME) method, with a real-space cutoff of 12$angstrom$. The same cutoff was applied to short-range van der Waals interactions.
 
@@ -304,6 +304,8 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 = Conclusion (3 pages)
 
 
+#pagebreak()
+#bibliography("cb1.bib")
 #pagebreak()
 #show: appendix
 
