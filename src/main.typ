@@ -63,6 +63,40 @@
 )
 
 
+#let nonumber(body) = {
+    set heading(numbering: none, outlined: false)
+  body
+}
+
+#nonumber[= Remerciements]
+
+
+#align(right)[
+    #emph[
+        Ret e voe din dibab ‘tre div vuhez,#linebreak()
+        En-dro d'ar familh, en-dro d'an enorioù.#linebreak()
+        Met n'eus ket a enor hep familh#linebreak()
+        Setu perak emañ ar gerioù-mañ.#linebreak()
+
+        Papa, Maman, me ‘zo aet kuit,#linebreak()
+        War hent ar studioù, pell diouzh an ti,#linebreak()
+        Pell diouzh ho karantez, pell diouzh ar c’hi,#linebreak()
+        Hag ar c’hazh sioul tal an tan.#linebreak()
+
+        Kavet em eus ur garantez,#linebreak()
+        Kollet em eus ur mignon,#linebreak()
+        Gouelañ a ran noz-ha-deiz,#linebreak()
+        Ne vo ken a «ken ar c’hentañ».#linebreak()
+
+        Soñjal a ran eus ma zud-kozh,#linebreak()
+        D’an amzer a dremen,#linebreak()
+        D’ar glav ha d’an amzer vat,#linebreak()
+        O c’hortoz an deiz, o tremen hep bezañ.#linebreak()
+    ]
+]
+
+
+#pagebreak()
 #outline()
 
 #pagebreak()
@@ -98,7 +132,11 @@ Beneath this interfacial layer lies the hydrophobic core, mainly determined by t
 
 Cell membranes also contain other essential lipids like sterols and sphingomyelins. The most famous member of the sterol family is cholesterol, which plays a vital role in regulating membrane fluidity and structural stability.
 
-*INSÉRER IMAGE DIAGRAMME DE PHASE DONNÉ PAR FLORENTIN, ARTICLE*
+#figure(
+    image("rsrc/phase-coexistence-cholesterol.jpeg"),
+    caption: [Phase diagram of lipid-cholesterol mixture. \ Adapted from @marsh_liquid-ordered_2010. $copyright$ Elsevier (2010), reproduced with permission.#footnote[License number n°_6241360511955_]
+    ],
+)
 
 These variations in lipid composition give rise to distinct lamellar phase states [*ref*], notably,
 
