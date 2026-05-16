@@ -1,5 +1,6 @@
 
 #import "@preview/physica:0.9.5":*
+#import "@preview/subpar:0.2.2" as subpar
 
 
 // PARAMETERS
@@ -75,10 +76,10 @@
     #emph[
         Ret e voe din dibab ‘tre div vuhez,#linebreak()
         En-dro d'ar familh, en-dro d'an enorioù.#linebreak()
-        Met n'eus ket a enor hep familh#linebreak()
+        Met n'eus ket a enor hep familh,#linebreak()
         Setu perak emañ ar gerioù-mañ.#linebreak()
 
-        Papa, Maman, me ‘zo aet kuit,#linebreak()
+        Papa, Maman, me ‘zo aet kuit#linebreak()
         War hent ar studioù, pell diouzh an ti,#linebreak()
         Pell diouzh ho karantez, pell diouzh ar c’hi,#linebreak()
         Hag ar c’hazh sioul tal an tan.#linebreak()
@@ -146,7 +147,7 @@ These variations in lipid composition give rise to distinct lamellar phase state
 
 Although phase equilibria are temperature-dependent, physiological conditions typically constrain this parameter within a narrow range.
 
-In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing [*ref heberle*], leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipid rafts, this mesoscale structure reflects the balance between entropic mixing and favorable intermolecular interactions, and results in regions exhibiting various mechanical properties.
+In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing [*ref heberle*, *ref florentin allemand*], leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipid rafts, this mesoscale structure reflects the balance between entropic mixing and favorable intermolecular interactions, and results in regions exhibiting various mechanical properties.
 
 == Ligand–membrane coupling
 
@@ -179,15 +180,13 @@ Fundamentally, this work is guided by the idea that membrane composition must be
 
 = Methods (3-4 pages)
 
-Justifier les choix, mais ne pas refaire la démo de cmt tout fonctionne.
+== All-atom molecular dynamics
 
-== All-atom molecular dynamics 
-replica ?
 === Membrane compositions, system preparation
 
-All--atom membrane systems were constructed using the CHARMM--GUI membrane builder. Symmetric bilayers composed of 100 lipids per leaflet were generated under periodic boundary conditions, resulting in lamellar multilayer systems separated by aqueous slabs.
+All--atom membrane systems were, for fluid systems, constructed using the CHARMM--GUI membrane builder. Gel-like membranes were built by hand from a Slipid pre-equilibrated patch. Symmetric bilayers composed of 100 lipids per leaflet were generated under periodic boundary conditions, resulting in lamellar multilayer systems separated by aqueous slabs.
 
-Two reference phospholipids were primarily considered in order to explore distinct membrane physical states. DOPC bilayers were used to represent a fluid liquid--disordered phase at physiological temperature, while DPPC membranes were simulated at 25 °C, a temperature well below the main phase transition temperature of DPPC ($tilde 314$ K). This ensures that the membrane remains in a stable gel-like phase during the simulations and avoids the strong fluctuations associated with the transition regime [*refs*]. Working with these two systems allows us to contrast ligand behavior in environments characterized by markedly different packing and chain ordering properties.
+Two reference phospholipids were primarily considered in order to explore distinct membrane physical states. DOPC bilayers were used to represent a fluid liquid--disordered phase at physiological temperature, while DPPC membranes were simulated at 25°C, a temperature well below the main phase transition temperature of DPPC ($tilde 41$°C). This ensures that the membrane remains in a stable gel-like phase during the simulations and avoids the strong fluctuations associated with the transition regime [*refs*]. Working with these two systems allows us to contrast ligand behavior in environments characterized by markedly different packing and chain ordering properties.
 
 In addition to these reference membranes, compositional perturbations were introduced by partially substituting the host lipids with polyunsaturated species. In practice, 10 % of the lipids were replaced by either SAPC ($omega$--6) or SDPC ($omega$--3), leading to six distinct membrane compositions in total. These substitutions introduce highly unsaturated acyl chains into otherwise well-defined bilayers and allow us to probe the influence of polyunsaturated lipids on ligand–membrane interactions.
 
@@ -196,13 +195,11 @@ Due to the planar geometry of the bilayer and the use of periodic boundary condi
 System preparation followed the standard equilibration procedure provided by CHARMM--GUI. After energy minimization, a restrained NVT equilibration was performed for 500 ps, followed by a restrained NPT equilibration of 1 ns using Berendsen pressure coupling. The production equilibration runs were then performed for 100–300 ns, depending on membrane composition, to allow the bilayers to reach equilibrium before further analysis. This was especially important for gel-phase membranes, which exhibit slower lipid dynamics and therefore require longer equilibration times [*ref*].
 
 
-The ligand CP55,940 was introduced at concentrations reaching up to 10 mol % relative to the lipid content, after equilibration of membranes. To ease spontaneous insertion while avoiding artificial aggregation in the aqueous phase, ligand molecules were initially positioned close to the membrane surface. A pulling restraint along the membrane normal was applied during the early stages of equilibration in order to keep the ligands near the bilayer interface. After ligand insertion, an additional system relaxation step was performed. The systems were first subjected to energy minimization in order to remove possible steric clashes introduced during ligand placement. A short equilibration stage was then carried out before starting the production simulations.
+The ligand CP55,940 was introduced at concentrations reaching up to 10 mol% relative to the lipid content, after equilibration of membranes. To ease spontaneous insertion while avoiding artificial aggregation in the aqueous phase, ligand molecules were initially positioned close to the membrane surface. A pulling restraint along the membrane normal was applied during the early stages of equilibration in order to keep the ligands near the bilayer interface. After ligand insertion, an additional system relaxation step was performed. The systems were first subjected to energy minimization in order to remove possible steric clashes introduced during ligand placement. A short equilibration stage was then carried out before starting the production simulations.
 
 === Force field and simulation parameters
 
-*NOTES* Il faudra sûrement revoir cette partie pour expliquer un peu mieux la construction des membranes gels.
-
-All molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations @yu_update_2020.
+All-atoms molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations @yu_update_2020.
 
 Alternative membrane force fields exist, including so-called Berger model for lipids. However, CHARMM36m is known to correctly treat polar functional groups such as hydroxyl (-OH) moieties, which are relevant for describing ligand--membrane interactions involving hydrogen bonding at the membrane interface.
 
@@ -210,11 +207,11 @@ Ligand parameters for CP55,940 were generated using CGenFF, through the ligand r
 
 The equations of motion were integrated using a 2 fs timestep, with all bonds involving hydrogen atoms constrained using the LINCS algorithm. Long-range electrostatic interactions were treated using the particle mesh Ewald (PME) method, with a real-space cutoff of 12$angstrom$. The same cutoff was applied to short-range van der Waals interactions.
 
-Temperature was controlled using a Nosé–Hoover thermostat, while pressure was maintained using a Parrinello--Rahman barostat with semi--isotropic pressure coupling, allowing independent fluctuations in the membrane plane and along the bilayer normal.
-
-For gel--like membrane systems, the pressure coupling time constant was slightly relaxed from 5 to 10 in order to prevent membrane buckling, a common defect in highly ordered bilayers where lateral stresses may induce the inflate of the membrane [*ref* plein de refs].
+Temperature was controlled using a Nosé–Hoover thermostat, while pressure was maintained using a Parrinello--Rahman barostat with semi--isotropic pressure coupling, allowing independent fluctuations in the membrane plane and along the bilayer normal. The pressure coupling time constant was set to 5 ps.
 
 === Umbrella sampling and PMF calculations
+
+*NOTES* Vérifier les valeurs des constantes dans le dernier paragraphe.
 
 To characterize ligand insertion beyond the simple partition coefficient, we considered potentials of mean force along a chosen reaction coordinate. In the present case, this coordinate was defined as the projection of the ligand center of mass along the membrane normal (z--axis), which provides a natural description of the insertion process.
 
@@ -244,7 +241,7 @@ In practice, initial configurations for these windows were generated using _stee
 
 Configurations were extracted along this trajectory and then used as starting points for the umbrella sampling simulations. The distributions obtained in each window were subsequently combined using the weighted histogram analysis method (WHAM) in order to reconstruct the unbiased PMF, since the harmonic potential introduces a bias.
 
-In the present work, PMF calculations were restricted to DOPC membranes. This choice was motivated by their fluid nature, which ensures sufficient molecular mobility and facilitates convergence of the free--energy profile along the chosen reaction coordinate. During steered molecular dynamics, the ligand was pulled along the membrane normal using a harmonic biasing potential, with a force constant of approximately $600 #text[ kJ mol]^(-1)#text[nm]^(-2)$ and a constant pulling rate of $1 times 10^(-4) #text[ nm ps]^(-1)$.
+In the present work, PMF calculations were restricted to DOPC membranes using GROMACS 2026.1. This choice was motivated by their fluid nature, which ensures sufficient molecular mobility and facilitates convergence of the free--energy profile along the chosen reaction coordinate. During steered molecular dynamics, the ligand was pulled along the membrane normal using a harmonic biasing potential, with a force constant of approximately $400 #text[ kJ mol]^(-1)#text[nm]^(-2)$ and a constant pulling rate of $1 times 10^(-4) #text[ nm ps]^(-1)$.
 
 === Observables
 
@@ -268,6 +265,7 @@ where $theta$ is the angle between a given C-H bond vector and the normal, and w
 Beyond these observables, molecular dynamics simulations can still be viewed as _in silico_ experiments#footnote[_Unfortunately, “simulation” has become increasingly misused to mean nothing more than “calculation.”_ -- William L. Jorgensen [*ref*]] and the trajectories provides additional qualitative insight into ligand behavior, such as insertion pathways or fine details of molecular arrangements.
 
 == Coarse-grained simulations
+- Préciser la version de gromacs
 - Martini 
 - Stratégie de mapping
 - S'inspirer de données de lipidomiques
@@ -275,6 +273,7 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 - Observables, validation
 
 == Computational performances
+- Jean-Zay, Mesocentre
 - Taille des systemes
 - ns/day performance
 - GPU/CPU usage 
@@ -283,10 +282,67 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 
 =  Atomistic results: lipid dependent ligand-membrane coupling (5-6 pages)
 
-== Insertion, orientation
-- Gel vs fluid comparison
-- SAPC enrichment effects
-- Headgroup dependence
+== Insertion profiles, orientational behaviors
+
+To characterize the preferred localization of CP55,940 within the membrane, density profiles were computed along the membrane normal for the different molecular groups composing both the ligand and the lipids. Particular attention was paid to the relative positioning of the aromatic and aliphatic moieities of the ligand with respect to the glycerol backbone and hydrophobic core of the membrane.
+
+
+
+#subpar.grid(
+    columns: (1fr, 1fr), 
+    gutter: 0.2cm,
+   
+    figure(image("rsrc/fig-insertion-profile/dopc/precise-profile-crop.png", width: 100%), caption: []),
+    figure(image("rsrc/fig-insertion-profile/dppc/precise-profile-crop.png", width: 100%), caption: []),
+    figure(image("rsrc/fig-insertion-profile/dppc/precise-profile-with-sapc-crop.png", width: 100%), caption: []),
+    figure(image("rsrc/fig-insertion-profile/dppc/precise-profile-with-sdpc-crop.png", width: 100%), caption: []),
+    caption: [Density profiles along the membrane normal for CP55,940 moieties and representative lipid groups in (a) DOPC, (b) DPPC, (c) DPPC+SAPC (9:1), (d) DPPC+SDPC (9:1) membranes. The cyclohexanol, phenol and alkyl--chain profiles correspond to the ligand.],
+    label: <fig-insertion-profile>
+)
+
+As shown in @fig-insertion-profile, in pure DOPC layer (a), the ligand displays a preferential location within the interfacial region of the membrane. The cyclohexanol and phenol groups remain predominantly localized near the glycerol backbone, whereas the alkyl chain penetrates more deeply into the hydrophobic region. This behavior is consistent with an amphiphilic insertion mode in which polar groups remain partially exposed to hydration while the chains align with the lipids tails. This density profile remains globally symmetric with respect to the bilayer center. Similar qualitative behavior was observed upon enrichment with SAPC or SDPC lipids, suggesting that ligand localization preserved in these more disordered -- fluid -- membranes.
+
+An different behavior is observed in DPPC--containing (b-d) systems. In contrast with the relatively simple interfacial distribution in DOPC, the ligand density profiles in DPPC bilayers exhibit multiple maxima extending deeper into the membrane. In particular, all the moieties display a bimodal distribution, with one population remaining close to the glycerol backbone as with DOPC and another penetrating significantly further into the core. This may reflect the coexistence of several metastable insertion states, possibly arising from the increased ordering and reduced fluidity brought by DPPC--rich membranes, but it should be interpreted with caution, since the slow relaxation dynamics of gel--like phases may also lead to incomplete sampling on molecular dynamics timescales, potentially contributing to the observed bimodal distributions.
+
+We analyzed the orientational distributions of CP55,940 aromatic core relative to the membrane normal. As stated in @fig-ring-angles, fluid DOPC membrane (b) exhibits a broad distribution centered around intermediate tilt angles (~35--55°). In this configuration, the aromatic core remains partially embedded within the membrane while maintaining proximity with the interfacial region. Such orientations are compatible with the hydroxyl groups remaining exposed to the hydrated interface, acting as interfacial anchors.
+
+Compared with DOPC, DPPC membranes (c-d) display much flatter distributions, without a clearly preferred tilt angle. This likely results from the more constrained environment of gel--like membranes, where slow lipid dynamics and local packing defects can stabilize several insertion geometries over molecular dynamics timescales. Interestingly, the addition of unsaturations to DPPC membranes leads to the appearance of two partially distinct orientational regimes. Alongside the intermediate angles, additional populations emerge around low (~15--20°) and high (~60°) tilt angles. This suggests that highly unsaturated lipids partially restore orientations compatible with interfacial anchoring of the hydroxyl groups.
+
+
+
+#subpar.grid(
+    columns: (1fr, 1fr), 
+    gutter: 0.2cm,
+    figure(image("rsrc/fig-ring-angles/scheme.png", width: 50%), caption: []),
+    figure(image("rsrc/fig-ring-angles/dopc/mean-ctrl-ring-orientation-distribution.png", width: 100%), caption: []),
+    figure(image("rsrc/fig-ring-angles/dppc/ring-orientation.png", width: 100%), caption: []),
+    figure(image("rsrc/fig-ring-angles/dppc/ring-orientation-sdpc.png", width: 100%), caption: []),
+    caption: [Orientational distributions of the aromatic core of CP55,940 relative to the membrane normal in (b) DOPC, (c) DPPC and (d) DPPC+SDPC (9:1) membranes. \ 
+(a) Schematic representation of the tilt-angle definition.],
+    label: <fig-ring-angles>
+)
+
+We next computed the orientational distributions of the alkyl chain of CP55,940. As shown in @fig-tail-angles, the distributions strongly depend on membrane composition. In DOPC membranes (b), the distributions remain relatively broad and compatible with folded conformations of the ligand, a hint of significant flexibility within the disordered bilayer. In contrast, the pure DPPC membrane (c) display a marked population around 20°, indicating that the ordered environment contrains the alkyl chain toward rigid conformations aligned with the other lipids. Adding unsaturated lipids (as with SDPC, (c)) progressively relaxes these orientational constraints and allows for more flexible conformations.
+
+#subpar.grid(
+    columns: (1fr, 1fr), 
+    gutter: 0.2cm,
+    figure(image("rsrc/fig-tails-angles/scheme.png", width: 50%), caption: []),
+    figure(image("rsrc/fig-tails-angles/dopc/mean-ctrl-orientation-distribution.png", width: 100%), caption: []),
+    figure(image("rsrc/fig-tails-angles/dppc/tail-orientation.png", width: 100%), caption: []),
+    figure(image("rsrc/fig-tails-angles/dppc/tail-orientation-sdpc.png", width: 100%), caption: []),
+    caption: [Orientational distributions of the alkyl chain of CP55,940 relative to the membrane normal in (b) DOPC, (c) DPPC and (d) DPPC+SDPC (9:1) membranes. \ 
+(a) Schematic representation of the tilt-angle definition.],
+    label: <fig-tail-angles>
+)
+
+Taken together, these observations indicate that the insertion behavior of CP55,940 strongly depends on membrane physical state. In disordered environments, the ligand adopts relatively flexible insertion geometries while maintaining its hydroxyl groups near the hydrated interface. Ordered membranes constrain both insertion depth and orientational dynamics, leading to broader distributions and more heterogeneous configurations. The introduction of highly unsaturated lipids partially relaxes these constraints.
+
+
+#figure(
+    image("rsrc/fig-illustration-placement/ligand-positioned.png", width:80%),
+    caption: [Representative snapshot of CP55,940 inserted in a pure DOPC bilayer.\ The hydroxyl groups (light red) remain located near the hydrated interface, while the tail is folding.],
+)
 
 == Free energy profiles (PMF)
 - Energy minima 
@@ -306,6 +362,13 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 
 = Extension to lipidomic context: Coarse-grained results (4-5 pages)
 
+À voir où on met le multiscale consistency. En premier j'oserais dire.
+
+== Multiscale consistency
+- Comparison between atomistics and CG results
+- Conserved vs scale-dependent features
+- PMF.
+
 == Realistic membrane compositions
 - w6 modulation 
 - cholesterol content
@@ -316,9 +379,6 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 - Phase preference
 - Demixing, rafts, collective membrane behavior
 
-== Multiscale consistency
-- Comparison between atomistics and CG results
-- Conserved vs scale-dependent features
 
 = Discussion (4-5 pages)
 
