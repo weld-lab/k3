@@ -284,9 +284,7 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 
 == Insertion profiles, orientational behaviors
 
-To characterize the preferred localization of CP55,940 within the membrane, density profiles were computed along the membrane normal for the different molecular groups composing both the ligand and the lipids. Particular attention was paid to the relative positioning of the aromatic and aliphatic moieities of the ligand with respect to the glycerol backbone and hydrophobic core of the membrane.
-
-
+In order to characterize the location of CP55,940 within the bilayer, density profiles were computed along the membrane normal for the different molecular groups --- composing the ligand, and the lipids.
 
 #subpar.grid(
     columns: (1fr, 1fr), 
@@ -300,49 +298,37 @@ To characterize the preferred localization of CP55,940 within the membrane, dens
     label: <fig-insertion-profile>
 )
 
-As shown in @fig-insertion-profile, in pure DOPC layer (a), the ligand displays a preferential location within the interfacial region of the membrane. The cyclohexanol and phenol groups remain predominantly localized near the glycerol backbone, whereas the alkyl chain penetrates more deeply into the hydrophobic region. This behavior is consistent with an amphiphilic insertion mode in which polar groups remain partially exposed to hydration while the chains align with the lipids tails. This density profile remains globally symmetric with respect to the bilayer center. Similar qualitative behavior was observed upon enrichment with SAPC or SDPC lipids, suggesting that ligand localization preserved in these more disordered -- fluid -- membranes.
+As shown in @fig-insertion-profile, in pure DOPC layer (a), the ligand displays a preferential location within the interfacial region of the membrane, as its aromatic moieties remain predominantly localized near the glycerol backbone of the lipids. The aliphatic chain penetrates a bit deeper into the membrane -- it tends to align with the surrounding chains, instead of completely folding on itself. This is expected for an amphiphilic insertion mode. We also observed a symmetric behavior upon enrichment with SAPC or SDPC lipids, suggesting that ligand localization is well preserved in these more disordered membranes.
 
-An different behavior is observed in DPPC--containing (b-d) systems. In contrast with the relatively simple interfacial distribution in DOPC, the ligand density profiles in DPPC bilayers exhibit multiple maxima extending deeper into the membrane. In particular, all the moieties display a bimodal distribution, with one population remaining close to the glycerol backbone as with DOPC and another penetrating significantly further into the core. This may reflect the coexistence of several metastable insertion states, possibly arising from the increased ordering and reduced fluidity brought by DPPC--rich membranes, but it should be interpreted with caution, since the slow relaxation dynamics of gel--like phases may also lead to incomplete sampling on molecular dynamics timescales, potentially contributing to the observed bimodal distributions.
+A different behavior is reported in DPPC--containing systems (b-d). In contrast with the simple interfacial distribution in DOPC, the ligand density profiles exhibit multiple maxima extending deeper into the membrane. In particular, all the moieties display a bimodal distribution, with one population remaining close to glycerol and another penetrating significantly further into the core. This may be due to the coexistence of several metastable insertion states, possibly arising from slow relaxation dynamics imposed by more the ordered environment, leading to incomplete sampling on molecular dynamis timescales and contributing to the observed bimodal distribution.
 
-We analyzed the orientational distributions of CP55,940 aromatic core relative to the membrane normal. As stated in @fig-ring-angles, fluid DOPC membrane (b) exhibits a broad distribution centered around intermediate tilt angles (~35--55°). In this configuration, the aromatic core remains partially embedded within the membrane while maintaining proximity with the interfacial region. Such orientations are compatible with the hydroxyl groups remaining exposed to the hydrated interface, acting as interfacial anchors.
+The @fig-ring-angles illustrates the orientational distributions of CP55,940 aromatic core relative to the membrane normal. Fluid DOPC membrane (b) exhibits a relatively broad distribution centered around intermediate tilt angles (~35--55°). In this configuration, the aromatic core remains close to the polar heads, allowing the hydroxyl groups to act as interfacial anchors in an hydrated region of the membrane. 
 
-Compared with DOPC, DPPC membranes (c-d) display much flatter distributions, without a clearly preferred tilt angle. This likely results from the more constrained environment of gel--like membranes, where slow lipid dynamics and local packing defects can stabilize several insertion geometries over molecular dynamics timescales. Interestingly, the addition of unsaturations to DPPC membranes leads to the appearance of two partially distinct orientational regimes. Alongside the intermediate angles, additional populations emerge around low (~15--20°) and high (~60°) tilt angles. This suggests that highly unsaturated lipids partially restore orientations compatible with interfacial anchoring of the hydroxyl groups.
-
-
-
-#subpar.grid(
-    columns: (1fr, 1fr), 
-    gutter: 0.2cm,
-    figure(image("rsrc/fig-ring-angles/scheme.png", width: 50%), caption: []),
-    figure(image("rsrc/fig-ring-angles/dopc/mean-ctrl-ring-orientation-distribution.png", width: 100%), caption: []),
-    figure(image("rsrc/fig-ring-angles/dppc/ring-orientation.png", width: 100%), caption: []),
-    figure(image("rsrc/fig-ring-angles/dppc/ring-orientation-sdpc.png", width: 100%), caption: []),
+#figure(
+    image("rsrc/fig-ring-angles/fig-ring-angles-with-scheme.png", width:100%),
     caption: [Orientational distributions of the aromatic core of CP55,940 relative to the membrane normal in (b) DOPC, (c) DPPC and (d) DPPC+SDPC (9:1) membranes. \ 
 (a) Schematic representation of the tilt-angle definition.],
-    label: <fig-ring-angles>
-)
+)<fig-ring-angles>
 
-We next computed the orientational distributions of the alkyl chain of CP55,940. As shown in @fig-tail-angles, the distributions strongly depend on membrane composition. In DOPC membranes (b), the distributions remain relatively broad and compatible with folded conformations of the ligand, a hint of significant flexibility within the disordered bilayer. In contrast, the pure DPPC membrane (c) display a marked population around 20°, indicating that the ordered environment contrains the alkyl chain toward rigid conformations aligned with the other lipids. Adding unsaturated lipids (as with SDPC, (c)) progressively relaxes these orientational constraints and allows for more flexible conformations.
+Compared with DOPC, DPPC membranes (c-d) display less defined distributions, without a clearly preferred tilt angle, suggesting a more heterogeneous orientational landscape with multiple nearly equivalent configurations. This broader distribution may reflect a higher packing frustration and a more constrained interfacial environment, where the ligand orientation is less collectively organized and more sensitive to local membrane structure.
 
-#subpar.grid(
-    columns: (1fr, 1fr), 
-    gutter: 0.2cm,
-    figure(image("rsrc/fig-tails-angles/scheme.png", width: 50%), caption: []),
-    figure(image("rsrc/fig-tails-angles/dopc/mean-ctrl-orientation-distribution.png", width: 100%), caption: []),
-    figure(image("rsrc/fig-tails-angles/dppc/tail-orientation.png", width: 100%), caption: []),
-    figure(image("rsrc/fig-tails-angles/dppc/tail-orientation-sdpc.png", width: 100%), caption: []),
+This idea is comforted in @fig-tail-angles, where we report orientational distributions of the alkyl chain of the ligand. The DOPC membrane (b) shows an almost isotropic distribution, with no preferential tilt angle over a wide angular range. This behavior suggests a highly fluid and permissive environment, where the ligand retains orientational freedom and can explore multiple configurations. In contrast, the DPPC system (c) display a marked low-angle preference (~20 °), indicative of a more tightly packed surrounding that contrains the alkyl chain. An intermediate behavior is observed for DPPC+SDPC (d), supporting the idea that lipid disorder progressively restores flexibility and reduce confinement effects.
+
+
+#figure(
+    image("rsrc/fig-tails-angles/fig-tail-angles-with-scheme.png", width:100%),
     caption: [Orientational distributions of the alkyl chain of CP55,940 relative to the membrane normal in (b) DOPC, (c) DPPC and (d) DPPC+SDPC (9:1) membranes. \ 
 (a) Schematic representation of the tilt-angle definition.],
-    label: <fig-tail-angles>
-)
+)<fig-tail-angles>
 
-Taken together, these observations indicate that the insertion behavior of CP55,940 strongly depends on membrane physical state. In disordered environments, the ligand adopts relatively flexible insertion geometries while maintaining its hydroxyl groups near the hydrated interface. Ordered membranes constrain both insertion depth and orientational dynamics, leading to broader distributions and more heterogeneous configurations. The introduction of highly unsaturated lipids partially relaxes these constraints.
+
+Taken together, these observations suggest that the insertion behavior of CP55,940 results from a balance between chemical affinity for the membrane interface and steric constraints imposed by the lipid matrix. In fluid condition, the ligand appears to be primarily guided by favorable chemical interactions, as the hydroxyl groups remain anchored near the hydrated interfacial region (illustrated in @fig-ligand-positioned) while the rest of the molecule retains conformational freedom. This contrasts with ordered membrane, where DPPC impose stronger packing constraints, leading to broader insertion distributions and less well--defined orientational preferences. In these systems, local membrane organization likely competes with the intrinsic amphiphilic character of the ligand in determining its insertion mode. The introduction of unsaturations progressively relaxes these constraints, partially restoring the configurational flexibility and interfacial behavior.
 
 
 #figure(
     image("rsrc/fig-illustration-placement/ligand-positioned.png", width:80%),
     caption: [Representative snapshot of CP55,940 inserted in a pure DOPC bilayer.\ The hydroxyl groups (light red) remain located near the hydrated interface, while the tail is folding.],
-)
+)<fig-ligand-positioned>
 
 == Free energy profiles (PMF)
 - Energy minima 
