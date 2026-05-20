@@ -286,17 +286,12 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 
 In order to characterize the location of CP55,940 within the bilayer, density profiles were computed along the membrane normal for the different molecular groups --- composing the ligand, and the lipids.
 
-#subpar.grid(
-    columns: (1fr, 1fr), 
-    gutter: 0.2cm,
-   
-    figure(image("rsrc/fig-insertion-profile/dopc/precise-profile-crop.png", width: 100%), caption: []),
-    figure(image("rsrc/fig-insertion-profile/dppc/precise-profile-crop.png", width: 100%), caption: []),
-    figure(image("rsrc/fig-insertion-profile/dppc/precise-profile-with-sapc-crop.png", width: 100%), caption: []),
-    figure(image("rsrc/fig-insertion-profile/dppc/precise-profile-with-sdpc-crop.png", width: 100%), caption: []),
-    caption: [Density profiles along the membrane normal for CP55,940 moieties and representative lipid groups in (a) DOPC, (b) DPPC, (c) DPPC+SAPC (9:1), (d) DPPC+SDPC (9:1) membranes. The cyclohexanol, phenol and alkyl--chain profiles correspond to the ligand.],
-    label: <fig-insertion-profile>
-)
+
+
+#figure(
+    image("rsrc/fig-insertion-profile/density-profile.png", width:80%),
+    caption: [Density profiles along the membrane normal for CP55,940 moieties and representative lipid groups in (a) DOPC, (b) DPPC, (c) DPPC+SAPC (9:1), (d) DPPC+SDPC (9:1) membranes. The cyclohexanol, phenol and alkyl--chain profiles correspond to the ligand, and are multiplied by 10 for better visualization.],
+)<fig-insertion-profile>
 
 As shown in @fig-insertion-profile, in pure DOPC layer (a), the ligand displays a preferential location within the interfacial region of the membrane, as its aromatic moieties remain predominantly localized near the glycerol backbone of the lipids. The aliphatic chain penetrates a bit deeper into the membrane -- it tends to align with the surrounding chains, instead of completely folding on itself. This is expected for an amphiphilic insertion mode. We also observed a symmetric behavior upon enrichment with SAPC or SDPC lipids, suggesting that ligand localization is well preserved in these more disordered membranes.
 
@@ -322,7 +317,7 @@ This idea is comforted in @fig-tail-angles, where we report orientational distri
 )<fig-tail-angles>
 
 
-Taken together, these observations suggest that the insertion behavior of CP55,940 results from a balance between chemical affinity for the membrane interface and steric constraints imposed by the lipid matrix. In fluid condition, the ligand appears to be primarily guided by favorable chemical interactions, as the hydroxyl groups remain anchored near the hydrated interfacial region (illustrated in @fig-ligand-positioned) while the rest of the molecule retains conformational freedom. This contrasts with ordered membrane, where DPPC impose stronger packing constraints, leading to broader insertion distributions and less well--defined orientational preferences. In these systems, local membrane organization likely competes with the intrinsic amphiphilic character of the ligand in determining its insertion mode. The introduction of unsaturations progressively relaxes these constraints, partially restoring the configurational flexibility and interfacial behavior.
+Taken together, these observations suggest that the insertion behavior of CP55,940 results from a balance between chemical affinity for the membrane interface and steric constraints imposed by the lipid matrix. In fluid condition, the ligand appears to be primarily guided by favorable chemical interactions, as the hydroxyl groups remain anchored near the hydrated interfacial region (illustrated in @fig-ligand-positioned) while the rest of the molecule retains conformational freedom. This contrasts with ordered membrane, where DPPC imposes stronger packing constraints, leading to broader insertion distributions and less well--defined orientational preferences. In these systems, local membrane organization likely competes with the intrinsic amphiphilic character of the ligand in determining its insertion mode. The introduction of unsaturations progressively relaxes these constraints, partially restoring the configurational flexibility and interfacial behavior.
 
 
 #figure(
@@ -331,6 +326,18 @@ Taken together, these observations suggest that the insertion behavior of CP55,9
 )<fig-ligand-positioned>
 
 == Free energy profiles (PMF)
+
+
+
+#figure(
+    image("rsrc/fig-pmf-aa/pmf.png", width:80%),
+    caption: [En construction],
+)<fig-pmf-aa>
+
+
+
+Having established that CP55,940 adopts an interfacial insertion mode in fluid DOPC membranes, we next sought to quantify the energetic preference associated with this localization. For this purpose, umbrella sampling simulations were performed along the membrane normal, using the ligand center of mass as reaction coordinate.
+
 - Energy minima 
 - Energy barriers
 - Membrane-dependent differences
