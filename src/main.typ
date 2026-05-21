@@ -250,7 +250,7 @@ The first observable is the so-called area per lipid (APL), defined as the avera
 
 The membrane thickness was measured as the average distance between the phosphate groups of the two opposing leaflets. Variations in thickness may reflect both compositional effects and asymmetry induced by local perturbations. Density profiles were evaluated by the use of histogram of atomic positions along a given axis, providing the average spatial distribution of molecular species and allowing the ligand position within the bilayer to be identified.
 
-Hydration profiles were computed by counting the number of water molecules in the vicinity of the polar headgroup, using a distance-based cutoff, typically of the order of the order of 3.5 $angstrom$ *A JUSTIFIER/MONTRER*. Hydration provides a measure of solvent penetration at the membrane interface and is particularly relevant for characterizing this region, where polar interactions and hydrogen bonding play a significant role.
+Hydration profiles were computed by counting the number of water molecules in the vicinity of the polar headgroup, using a distance-based cutoff, typically of the order of the order of 3.5 $angstrom$ --- usually used for studying structuring waters within GPCR. Hydration provides a measure of solvent penetration at the membrane interface and is particularly relevant for characterizing this region, where polar interactions and hydrogen bonding play a significant role.
 
 
 The orientational order of lipid acyl chains was also quantified, using the deuterium order parameter. This quantity is a direct measure of chain alignements with respect to the membrane normal and is defined as,
