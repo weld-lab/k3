@@ -1,4 +1,3 @@
-
 #import "@preview/physica:0.9.5":*
 #import "@preview/subpar:0.2.2" as subpar
 
@@ -239,9 +238,9 @@ In that sense, the free--energy profile can be reconstructed by varying the reac
 
 In practice, initial configurations for these windows were generated using _steered molecular dynamics_ (SMD). After equilibration of the membrane--ligand system, the ligand was gradually pulled along the membrane normal, starting from the aqueous phase toward the bilayer center.
 
-Configurations were extracted along this trajectory and then used as starting points for the umbrella sampling simulations. The distributions obtained in each window were subsequently combined using the weighted histogram analysis method (WHAM) in order to reconstruct the unbiased PMF, since the harmonic potential introduces a bias.
+Then, 35 configurations were extracted along this trajectory and then used as starting points for the umbrella sampling simulations, of which each was running for 100ns. The distributions obtained in each window were subsequently combined using the weighted histogram analysis method (WHAM) in order to reconstruct the unbiased PMF, since the harmonic potential introduces a bias.
 
-In the present work, PMF calculations were restricted to DOPC membranes using GROMACS 2026.1. This choice was motivated by their fluid nature, which ensures sufficient molecular mobility and facilitates convergence of the free--energy profile along the chosen reaction coordinate. During steered molecular dynamics, the ligand was pulled along the membrane normal using a harmonic biasing potential, with a force constant of approximately $400 #text[ kJ mol]^(-1)#text[nm]^(-2)$ and a constant pulling rate of $1 times 10^(-4) #text[ nm ps]^(-1)$.
+In the present work, PMF calculations were restricted to DOPC membranes (64 lipids per leaflet) using GROMACS 2026.1. This choice was motivated by their fluid nature, which ensures sufficient molecular mobility and facilitates convergence of the free--energy profile along the chosen reaction coordinate. During steered molecular dynamics, the ligand was pulled along the membrane normal using a harmonic biasing potential, with a force constant of approximately $400 #text[ kJ mol]^(-1)#text[nm]^(-2)$ and a constant pulling rate of $1 times 10^(-4) #text[ nm ps]^(-1)$. 
 
 === Observables
 
@@ -257,10 +256,10 @@ Hydration profiles were computed by counting the number of water molecules in th
 The orientational order of lipid acyl chains was also quantified, using the deuterium order parameter. This quantity is a direct measure of chain alignements with respect to the membrane normal and is defined as,
 
 $
-    S_#text[CD] = frac(1,2) angle.l 3 cos^2 theta - 1 angle.r
+    S_#text[CH] = frac(1,2) angle.l 3 cos^2 theta - 1 angle.r
 $
 
-where $theta$ is the angle between a given C-H bond vector and the normal, and where $angle.l dot angle.r$ denotes a statistical average over time and lipids of the same species. The order parameter was computed for each carbon atom along the acyl chains, resulting in a position-dependent profile that reflects the variation of chain ordering from the headgroup region to the bilayer core.
+where $theta$ is the angle between a given C-H bond vector and the normal, and where $angle.l dot angle.r$ denotes a statistical average over time and lipids of the same species. The order parameter was computed for each carbon atom along the acyl chains using gorder [*ref*], resulting in a position-dependent profile that reflects the variation of chain ordering from the headgroup region to the bilayer core. It is often understood that a higher value corresponds to a more rigid (more ordered) system, whereas values closer to zero indicate a more fluid system. However, this interpretation should be treated with caution, since the parameter only reflects an angular measurement.
 
 Beyond these observables, molecular dynamics simulations can still be viewed as _in silico_ experiments#footnote[_Unfortunately, “simulation” has become increasingly misused to mean nothing more than “calculation.”_ -- William L. Jorgensen [*ref*]] and the trajectories provides additional qualitative insight into ligand behavior, such as insertion pathways or fine details of molecular arrangements.
 
@@ -290,14 +289,14 @@ In order to characterize the location of CP55,940 within the bilayer, density pr
 
 #figure(
     image("rsrc/fig-insertion-profile/density-profile.png", width:80%),
-    caption: [Density profiles along the membrane normal for CP55,940 moieties and representative lipid groups in (a) DOPC, (b) DPPC, (c) DPPC+SAPC (9:1), (d) DPPC+SDPC (9:1) membranes. The cyclohexanol, phenol and alkyl--chain profiles correspond to the ligand, and are multiplied by 10 for better visualization.],
+    caption: [Density profiles along the membrane normal for CP55,940 moieties and representative lipid groups in (a) DOPC, (b) DPPC, (c) DPPC+SAPC (9:1), (d) DPPC+SDPC (9:1) membranes. The cyclohexanol, phenol and alkyl--chain profiles correspond to the ligand, and corresponding densities are multiplied by 10 for better visualization.],
 )<fig-insertion-profile>
 
 As shown in @fig-insertion-profile, in pure DOPC layer (a), the ligand displays a preferential location within the interfacial region of the membrane, as its aromatic moieties remain predominantly localized near the glycerol backbone of the lipids. The aliphatic chain penetrates a bit deeper into the membrane -- it tends to align with the surrounding chains, instead of completely folding on itself. This is expected for an amphiphilic insertion mode. We also observed a symmetric behavior upon enrichment with SAPC or SDPC lipids, suggesting that ligand localization is well preserved in these more disordered membranes.
 
-A different behavior is reported in DPPC--containing systems (b-d). In contrast with the simple interfacial distribution in DOPC, the ligand density profiles exhibit multiple maxima extending deeper into the membrane. In particular, all the moieties display a bimodal distribution, with one population remaining close to glycerol and another penetrating significantly further into the core. This may be due to the coexistence of several metastable insertion states, possibly arising from slow relaxation dynamics imposed by more the ordered environment, leading to incomplete sampling on molecular dynamis timescales and contributing to the observed bimodal distribution.
+A different behavior is reported in DPPC--containing systems (b-d). In contrast with the simple interfacial distribution in DOPC, the ligand density profiles exhibit multiple maxima extending deeper into the membrane. In particular, all the moieties display a bimodal distribution, with one population remaining close to glycerol and another penetrating significantly further into the core. This may be due to the coexistence of several metastable insertion states, possibly arising from slow relaxation dynamics imposed by more the ordered environment, leading to incomplete sampling on molecular dynamics timescales and contributing to the observed bimodal distribution.
 
-The @fig-ring-angles illustrates the orientational distributions of CP55,940 aromatic core relative to the membrane normal. Fluid DOPC membrane (b) exhibits a relatively broad distribution centered around intermediate tilt angles (~35--55°). In this configuration, the aromatic core remains close to the polar heads, allowing the hydroxyl groups to act as interfacial anchors in an hydrated region of the membrane. 
+The @fig-ring-angles illustrates the orientational distributions of CP55,940 aromatic core relative to the membrane normal. Fluid DOPC membrane (b) exhibits a relatively broad distribution centered around intermediate tilt angles (~35--55°). In this configuration, the aromatic core remains close to the polar heads, allowing the hydroxyl groups to act as interfacial anchors in a hydrated region of the membrane. 
 
 #figure(
     image("rsrc/fig-ring-angles/fig-ring-angles-with-scheme.png", width:100%),
@@ -331,27 +330,58 @@ Taken together, these observations suggest that the insertion behavior of CP55,9
 
 #figure(
     image("rsrc/fig-pmf-aa/pmf.png", width:80%),
-    caption: [En construction],
+    caption: [Potential of mean force computed for a CP55,940 ligand approaching a DOPC membrane in all--atoms. An indicative illustration is set in the background to visualize the leaflet.],
 )<fig-pmf-aa>
 
+Having established through the use of insertion profiles that CP55,940 adopts preferentially an interfacial insertion mode in fluid DOPC membranes, we next quantified the energetic cost associated to it. The free--energy profile shown in @fig-pmf-aa was reconstructed by taking the aqueous phase as the reference state.
 
+Starting from bulk water, the PMF rapidly decreases as the ligand approaches the interface, indicating a thermodynamic driving force for membrane insertion, confirming that the membrane constitutes a favorable environment for the ligand. Interestingly, a small energy barrier is observed close to the water-lipid interface ; it likely corresponds to the energetic cost associated with crossing the phosphate headgroup region and locally perturbing lipid packing in order to access the hydrophobic core of the bilayer.
 
-Having established that CP55,940 adopts an interfacial insertion mode in fluid DOPC membranes, we next sought to quantify the energetic preference associated with this localization. For this purpose, umbrella sampling simulations were performed along the membrane normal, using the ligand center of mass as reaction coordinate.
-
-- Energy minima 
-- Energy barriers
-- Membrane-dependent differences
+Once this barrier is crossed, the free--energy decreases toward a pronounced minimum located inside the membrane, in good agreement with the density profiles and orientational analyses. Finally, the PMF rises again when approaching the bilayer center, usually depleted in lipids. In practice, this free--energy increase should act as a barrier against spontaneous flip--flop events on accessible simulation timescales.
 
 == Structural and mechanical response
-- Order parameters
-- Local rigidification
-- Dehydration profiles
-- Thickness changes
 
-== Interpretation of coupling
-- Membrane influence on ligand positioning
-- Local membrane response to insertion
-- Bidirectional coupling analysis
+We next examined how the membrane itself responds to ligand incorporation. To this end, we analyzed the area per lipid, the deuterium order parameter and the local hydration environment of the glycerol, which together should provide complementary information on membrane packing, ordering and interfacial organization. In mixed membranes, order parameter analyses were restricted to the host lipids (DOPC or DPPC). Indeed, the relatively small number of SAPC or SDPC molecules in the simulated patches did not allow statistically robust profiles to be extracted for the polyunsaturated species themselves.
+
+#figure(
+    image("rsrc/fig-apl/apl.png", width:80%),
+    caption: [Area per lipid (APL) measured for DOPC--based and DPPC--based membranes in the absence (control) and presence of CP55,940. For mixed systems, the reported values correspond to the average area per host lipid within the membrane plane.],
+)<fig-apl>
+
+
+
+
+The first important thing to note is that the control systems reproduce the expected physical trends associated with membrane composition and phase state. As shown in @fig-apl and @fig-sch-dppc, DPPC--based membranes display smaller APL values together with substantially higher order parameters than DOPC systems (@fig-sch-dopc), reflecting the tightly packed and more ordered nature of the gel phase. DPPC membranes enriched with SAPC or SDPC display though slightly higher order parameters than pure DPPC. At first sight, this may appear counterintuitive, since the introduction of unsaturated chains is generally associated with increased disorder. However, this observation should be interpreted carefully. In the gel phase, DPPC acyl chains are strongly tilted with respect to the membrane normal, while remaining very straight, as suggested by the flat--looking curve. Still, since the order parameter only probes the angle formed by C--H bonds relative to the normal, such collective tilt can artificially reduce the measured $S_#text[CH]$ despite the membrane remaining rigid. The introduction of polyunsaturated lipids likely shifts the membrane away from the gel organization toward a more fluid but still ordered state, possibly closer to a liquid--ordered regime. In this configuration, the average chain tilt relative to the membrane normal is reduced, which may contribute to the larger apparent order parameters observed here. We also noted that the profiles become more rounded and less flat, suggesting that part of the extreme packing characteristic of the gel phase is progressively lost, together with some restored fluidity. Conversely, DOPC bilayers exhibit larger APL values and lower order parameters, in agreement with their liquid--disordered nature at physiological temperature. The addition of unsaturations further shifts the systems toward more disordered configurations. Overall, these observations are consistent with the expected hierarchy between the different membrane compositions and therefore support the physical coherence of the simulated systems.
+
+
+
+#figure(
+    image("rsrc/fig-order-parameter/dopc-order.png", width:112%),
+    caption: [Deuterium order parameter profiles ($S_#text[CH]$) computed for DOPC acyl chains in pure DOPC, DOPC+SAPC (9:1) and DOPC+SDPC (9:1) membranes, in the absence (control) and presence of CP55,940. The upper and lower panels correspond respectively to the sn--1 and sn--2 chains of DOPC. Order parameters were computed only for the host DOPC lipids.],
+)<fig-sch-dopc>
+
+In this background, the effect of CP55,940 appears to be dependent on the initial membrane organization. In all systems, ligand insertion induces an increase in area per lipid, indicating a global lateral expansion --- depacking --- of the bilayer. This effect remains moderate in fluid DOPC membranes but becomes more pronounced in DPPC systems. From a physical perspective, this behavior is compatible with the ligand acting as a local inclusion within the membrane, perturbing the packing and generating additional free volume around the insertion region. This expansion is not systematically accompanied by a decrease in chain ordering. In DOPC membranes, the deuterium parameter profiles remain almost unchanged upon ligand insertion, suggesting that the fluid bilayer can accomodate the perturbation without major structural reorganization. By contrast, DPPC--based membranes display a noticeable increase in chain ordering in the presence of the ligand, which we interpret as a trace of packing rearrangement around the ligand, where the membrane reorganizes in order to compensate for the perturbation introduced by insertion.
+
+Hydration profiles further support the observed differences between the various membrane compositions. As represented in @fig-hydration, DOPC--based membranes exhibit systematically larger hydration levels around the phosphate group than DPPC systems. The introduction of polyunsaturated lipids increases hydration in both membrane families, an effect that is particularly pronounced in DPPC systems. This behavior is coherent with the increase in area per lipid and the partial loss of the highly packed gel organization discussed previously. The insertion of unsaturated chains likely introduces local packing defects and additional free volume, thereby facilitating water penetration toward the interfacial region.
+
+#figure(
+    image("rsrc/fig-order-parameter/dppc-order.png", width:112%),
+    caption: [Deuterium order parameter profiles ($S_#text[CH]$) computed for DPPC acyl chains in pure DPPC, DPPC+SAPC (9:1) and DPPC+SDPC (9:1) membranes, for both control systems and membranes containing CP55,940. The upper and lower panels correspond respectively to the sn--1 and sn--2 chains of DPPC. Order parameters were evaluated only on the host DPPC lipids.],
+)<fig-sch-dppc>
+
+
+The presence of CP55,940 also shifts the distributions toward larger hydration values. This effect remains moderate in fluid DOPC membranes but becomes much more visible in DPPC systems. Altogether, these observations support the idea that both polyunsaturated lipids and ligand insertion contribute to relaxing the compact organization of ordered membranes and promote a more hydrated interfacial environment.
+
+For clarity, all hydration distributions were normalized by the number of host lipids (DOPC or DPPC), allowing direct comparison between the different membrane compositions despite the presence of mixed systems.
+
+
+
+
+#figure(
+    image("rsrc/fig-hydration/hydration.png", width:100%),
+    caption: [Hydration distributions computed around the phosphate moieties of the host lipids for (a) DOPC and DOPC+SAPC (9:1) membranes, (b) DOPC and DOPC+SDPC (9:1) membranes, (c) DPPC and DPPC+SAPC (9:1)  membranes, and (d) DPPC and DPPC+SDPC (9:1) membranes, in the absence and presence of CP55,940. The distributions are normalized by the number of host lipids (DOPC or DPPC).],
+)<fig-hydration> 
+
 
 = Extension to lipidomic context: Coarse-grained results (4-5 pages)
 
