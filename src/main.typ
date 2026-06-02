@@ -265,6 +265,24 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 == Coarse-grained simulations
 
 
+=== Martini 3 force field and ligand parametrization
+
+
+Coarse--grained molecular dynamics was employed to study ligand--membrane coupling in lipid compositions of increased biological realism. While all--atom simulations provide detailed molecular information, they remain limited in terms of accessible system size and simulation timescale. These limitations become particularly important when considering lipidomic data, which may contain a large number of distinct lipid species, some of them representing only a few percent of the total membrane content. Moreover, several phenomena, including lateral lipid redistribution and partial demixing, occur on spatial and temporal scales that remain difficult to access using all--atoms models.
+
+To address these limitations, we employed the MARTINI3 (M3) [*ref*]  coarse--grained forcefield, in which several atoms are represented by a single interaction site. This reduction in resolution considerably decreases the computational cost of the simulations, allowing larger membrane patches and longer trajectories to be explored.
+
+A large fraction of the lipid species required to reproduce the target lipidomic compositions is already available within the M3 ecosystem [*ref?*]. However, the parametrization of the ligand itself remains a critical step. In the present work, CP55,940 was coarse--grained using the AutoMartiniM3 [*ref*] tool, which provides an automated starting point for the construction of M3 models of small molecules. The availability of AutoMartiniM3, together with the extensive documentation and validation studies accompanying M3, constituted an additional motivation for selecting this force field. Starting from the atomistic structure of CP55,940, AutoMartiniM3 generated an initial mapping and set of interaction parameters, illustrated in *fig*.
+
+*METTRE ICI UNE FIGURE À GAUCHE DU MAPPING, À DROITE DES PMF*
+
+Because automated procedures may not fully reproduce the properties of a given molecule, additional validation steps were performed. In particular, PMFs calculations were carried out for the coarse--grained ligand and systematically compared with the atomistic counterpart. The resulting model was judged sufficiently accurate to reproduce the maininsertion features of CP55,940 but perfect quantitative agreement cannot be expected. It needs to be discussed in following sections.
+
+=== Membrane composition
+
+Montrer composition représentative des 15 especes majoritaires (75%).
+Montrer composition déplétée en omega3 et comment ça a été fait.
+
 #figure(
     table(
   columns: (auto, auto, auto, auto, auto),
@@ -295,12 +313,12 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
     caption: [Composition of the membrane model derived from synaptic lipidomics data.],
 )<table-lipid-composition>
 
-- Préciser la version de gromacs
-- Martini 
-- Stratégie de mapping
-- S'inspirer de données de lipidomiques
-- Modulation d'omega 6 et de médicament 
-- Observables, validation
+
+
+=== Simulation protocol
+- Dire que les membranes ont été construites sur CHARMM-GUI Membrane Builder.
+- Dire qu'on a qu'une seule concentration de médicament (10 mol%).
+- Préciser la version de gromacs (2026.1)
 
 == Computational performances
 - Jean-Zay, Mesocentre
