@@ -127,7 +127,9 @@ The nomenclature of phospholipids reflects this structural organization. Species
 
 Headgroups vary in size, charge distribution and hydrogen-bonding capability, thereby defining the interfacial character of the membrane @kim_decoding_2026. These variations impose distinct geometric constraints at the molecular level, which propagate to the collective organization of the bilayer. _Phosphatidylcholines_ (PC headgroup) exhibit an approximately cylindrical geometry favoring lamellar structures , whereas smaller headgroups such as _phosphatidylethanolamine_ (PE) introduce packing asymmetry and curvature stress.
 
-Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids @ali_review_2023. Chain length and degree of unsaturation constitute the two primary levers to modulate the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ _cis_ double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity.
+Beneath this interfacial layer lies the hydrophobic core, mainly determined by the composition and chemical structure of acyl chains, also known as fatty acids @ali_review_2023. Chain length and degree of unsaturation constitute the two primary levers to modulate the core. For example, increasing unsaturation enhances conformational flexibility, _i.e._ _cis_ double bonds introduce kinks that disrupt tight packing, hence reduce chain order and increase membrane fluidity. Acyl chains are also commonly described using a compact notation. In a glycerophospholipid, the two chains are usually referred to as sn--1 and sn--2, corresponding to their position on the glycerol backbone. Another common notation specifies the number of carbon atoms and the number of double bonds in each chain. For example, DPPC contains two saturated 16--carbon chains and can therefore be written as 16:0/16:0, whereas a polyunsaturated chain containing 20 carbons and four double bonds would be denoted 20:4.
+
+
 
 Cell membranes also contain other essential lipids such as sterols and sphingomyelins. Among sterols, cholesterol plays a role in regulating membrane organization, fluidity and structural stability. Through their collective interactions, these different lipid species give rise to distinct membrane phase states. The phase diagram shown in @fig-phase-coexistence-cholesterol corresponds to a model membrane composed of DPPC and cholesterol. The horizontal axis represents the cholesterol mole fraction, _i.e._ the proportion of cholesterol molecules relative to the total number of lipid molecules in the membrane mixture, while the vertical axis corresponds to temperature. Depending on these two parameters, the membrane may adopt different physical states, including the gel phase ($L_beta$), the liquid--disordered phase ($L_alpha$, also commonly denoted $L_d$), and the liquid--ordered phase ($L_o$).
 
@@ -143,7 +145,7 @@ The gel phase ($L_beta$) corresponds to a highly ordered state in which lipid ac
 Broad coexistence regions also appear in the diagram, such as $L_alpha + L_o$ or $L_beta + L_o$, indicating that different phases may coexist within the same membrane system depending on cholesterol concentration and temperature. Such coexistence reflects the heterogeneous nature of multicomponent membranes, in which local lipid organization and dynamics strongly depend on composition and thermodynamic conditions. Although phase equilibria are temperature--dependent, physiological conditions typically constrain this parameter within a narrow range.
 
 
-In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing [*ref heberle*, *ref florentin allemand*], leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipid rafts, this mesoscale structure reflects the balance between entropic mixing and favorable intermolecular interactions, and results in regions exhibiting various mechanical properties.
+In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing [*ref heberle*, *ref florentin allemand*], leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipids rafts, this mesoscale structure reflects the competition between entropy, which favors mixing, and enthalpy, which favors lipid--lipid associations, and results in regions exhibiting various mechanical properties.
 
 == Ligand–membrane coupling
 
@@ -172,7 +174,7 @@ In particular, coarse--grained models make it possible to move beyond idealized 
 
 Accordingly, our main analytical tools consist of established membrane descriptors: membrane thickness, acyl chain order parameters, density profiles, PMFs, hydration profiles ... These indicators provide complementary structural and thermodynamic information and will be introduced and discussed systematically throughout the study.  In line with this approach, we rely on a single ligand -- CP55,940 -- used as a probe in order to isolate membranotropic effects from ligand-specific variability.
 
-Fundamentally, this work is guided by the idea that membrane composition must be regarded as an essential variable rather than a passive background. If the coupling is sensitive  to lipid organization, then any variations in acyl chain saturation, sterol content, or PUFA balance may alter drug behavior in ways that cannot be captured by protein affinity alone. The broader perspective of this research is to eventually clarify to what extent the membrane itself participates in shaping pharmacological outcomes ; however, our current study remains focused on the mechanics of coupling.
+Fundamentally, this work is guided by the idea that membrane composition must be regarded as an essential variable rather than a passive background. If the coupling is sensitive  to lipid organization, then any variations in acyl chain saturation, sterol content, or PUFAs balance may alter drug behavior in ways that cannot be captured by protein affinity alone. The broader perspective of this research is to eventually clarify to what extent the membrane itself participates in shaping pharmacological outcomes ; however, our current study remains focused on the mechanics of coupling.
 
 = Methods (3-4 pages)
 
@@ -313,7 +315,7 @@ This interpretation is supported by @fig-tail-angles, where we report orientatio
 )<fig-tail-angles>
 
 
-Taken together, these observations suggest that the insertion behavior of CP55,940 results from a balance between chemical affinity for the membrane interface and steric constraints imposed by the lipid matrix. In fluid condition, the ligand appears to be primarily guided by favorable chemical interactions, as the hydroxyl groups remain anchored near the hydrated interfacial region while the rest of the molecule retains conformational freedom. This picture is consistent with previous experimental NMR results obtained for CP55,940 in POPC membranes, a fluid phosphatidylcholine bilayer close to DOPC, where the ligand was also reported to adopt an interfacial insertion mode [*ref*]. It contrasts with ordered membranes, where DPPC imposes stronger packing constraints, leading to broader insertion distributions and less well--defined orientational preferences. In these systems, local membrane organization likely competes with the intrinsic amphiphilic character of the ligand in determining its insertion mode. The introduction of unsaturations progressively relaxes these constraints, partially restoring the configurational flexibility and interfacial behavior.
+Taken together, these observations suggest that the insertion behavior of CP55,940 results from a balance between chemical affinity for the membrane interface and steric constraints imposed by the lipid matrix. In fluid condition, the ligand appears to be primarily guided by favorable chemical interactions, as the hydroxyl groups remain anchored near the hydrated interfacial region while the rest of the molecule retains conformational freedom. This picture is consistent with previous experimental NMR results obtained for CP55,940 in POPC membranes @kimura_location_2009, a fluid phosphatidylcholine bilayer close to DOPC, where the ligand was also reported to adopt an interfacial insertion mode [*ref*]. It contrasts with ordered membranes, where DPPC imposes stronger packing constraints, leading to broader insertion distributions and less well--defined orientational preferences. In these systems, local membrane organization likely competes with the intrinsic amphiphilic character of the ligand in determining its insertion mode. The introduction of unsaturations progressively relaxes these constraints, partially restoring the configurational flexibility and interfacial behavior.
 
 
 // #figure(
@@ -427,16 +429,3 @@ For clarity, all hydration distributions were normalized by the number of host l
 #pagebreak()
 #show: appendix
 
-
-= Glossary
-
-- ECS
-- CB1
-- GPCR
-- PUFA
-- affinity
-- potency
-- efficacy
-- lipid
-- omega 3, omega 6
-- scaffold
