@@ -178,7 +178,7 @@ Fundamentally, this work is guided by the idea that membrane composition must be
 
 = Methods (3-4 pages)
 
-== All-atom molecular dynamics
+== All--atom molecular dynamics
 
 === Membrane compositions, system preparation
 
@@ -197,7 +197,7 @@ The ligand CP55,940 was introduced at concentrations reaching up to 10 mol% rela
 
 === Force field and simulation parameters
 
-All-atoms molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations @yu_update_2020.
+All--atom molecular dynamics simulations were performed using GROMACS 2018.2. Interactions were described using the CHARMM36m force field, which provides a well-established parametrization for lipid membranes and is widely used for phospholipid bilayer simulations @yu_update_2020.
 
 Alternative membrane force fields exist, including so-called Berger model for lipids. However, CHARMM36m is known to correctly treat polar functional groups such as hydroxyl (-OH) moieties, which are relevant for describing ligand--membrane interactions involving hydrogen bonding at the membrane interface.
 
@@ -268,15 +268,15 @@ Beyond these observables, molecular dynamics simulations can still be viewed as 
 === Martini 3 force field and ligand parametrization
 
 
-Coarse--grained molecular dynamics was employed to study ligand--membrane coupling in lipid compositions of increased biological realism. While all--atom simulations provide detailed molecular information, they remain limited in terms of accessible system size and simulation timescale. These limitations become particularly important when considering lipidomic data, which may contain a large number of distinct lipid species, some of them representing only a few percent of the total membrane content. Moreover, several phenomena, including lateral lipid redistribution and partial demixing, occur on spatial and temporal scales that remain difficult to access using all--atoms models.
+Coarse--grained molecular dynamics was employed to study ligand--membrane coupling in lipid compositions of increased biological realism. While all--atom simulations provide detailed molecular information, they remain limited in terms of accessible system size and simulation timescale. These limitations become particularly important when considering lipidomic data, which may contain a large number of distinct lipid species, some of them representing only a few percent of the total membrane content. Moreover, several phenomena, including lateral lipid redistribution and partial demixing, occur on spatial and temporal scales that remain difficult to access using all--atom models.
 
-To address these limitations, we employed the MARTINI3 (M3) [*ref*]  coarse--grained forcefield, in which several atoms are represented by a single interaction site. This reduction in resolution considerably decreases the computational cost of the simulations, allowing larger membrane patches and longer trajectories to be explored.
+To address these limitations, we employed the MARTINI3 (M3) [*ref*]  coarse--grained force field, in which several atoms are represented by a single interaction site. This reduction in resolution considerably decreases the computational cost of the simulations, allowing larger membrane patches and longer trajectories to be explored.
 
 A large fraction of the lipid species required to reproduce the target lipidomic compositions is already available within the M3 ecosystem [*ref?*]. However, the parametrization of the ligand itself remains a critical step. In the present work, CP55,940 was coarse--grained using the AutoMartiniM3 [*ref*] tool, which provides an automated starting point for the construction of M3 models of small molecules. The availability of AutoMartiniM3, together with the extensive documentation and validation studies accompanying M3, constituted an additional motivation for selecting this force field. Starting from the atomistic structure of CP55,940, AutoMartiniM3 generated an initial mapping and set of interaction parameters, illustrated in *fig*.
 
 *METTRE ICI UNE FIGURE À GAUCHE DU MAPPING, À DROITE DES PMF*
 
-Because automated procedures may not fully reproduce the properties of a given molecule, additional validation steps were performed. In particular, PMFs calculations were carried out for the coarse--grained ligand and systematically compared with the atomistic counterpart. The resulting model was judged sufficiently accurate to reproduce the maininsertion features of CP55,940 but perfect quantitative agreement cannot be expected. It needs to be discussed in following sections.
+Because automated procedures may not fully reproduce the properties of a given molecule, additional validation steps were performed. In particular, PMF calculations were carried out for the coarse--grained ligand and systematically compared with the atomistic counterpart. The resulting model was judged sufficiently accurate to reproduce the main insertion features of CP55,940 but perfect quantitative agreement cannot be expected. It needs to be discussed in following sections.
 
 === Membrane composition
 
@@ -379,7 +379,7 @@ Taken together, these observations suggest that the insertion behavior of CP55,9
 
 #figure(
     image("rsrc/fig-pmf-aa/pmf.png", width:80%),
-    caption: [Potential of mean force computed for a CP55,940 ligand approaching a DOPC membrane in all--atoms. An indicative illustration is set in the background to visualize the leaflet.],
+    caption: [Potential of mean force computed for a CP55,940 ligand approaching a DOPC membrane in all--atom. An indicative illustration is set in the background to visualize the leaflet.],
 )<fig-pmf-aa>
 
 Having established from insertion profiles that CP55,940 adopts preferentially an interfacial insertion mode in fluid DOPC membranes, we next quantified the energetic cost associated to it. The free--energy profile shown in @fig-pmf-aa was reconstructed by taking the aqueous phase as the reference state.
