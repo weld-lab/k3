@@ -133,7 +133,7 @@ Beneath this interfacial layer lies the hydrophobic core, mainly determined by t
 
 Cell membranes also contain other essential lipids such as sterols and sphingomyelins. Among sterols, cholesterol plays a role in regulating membrane organization, fluidity and structural stability. Through their collective interactions, these different lipid species give rise to distinct membrane phase states. The phase diagram shown in @fig-phase-coexistence-cholesterol corresponds to a model membrane composed of DPPC and cholesterol. The horizontal axis represents the cholesterol mole fraction, _i.e._ the proportion of cholesterol molecules relative to the total number of lipid molecules in the membrane mixture, while the vertical axis corresponds to temperature. Depending on these two parameters, the membrane may adopt different physical states, including the gel phase ($L_beta$), the liquid--disordered phase ($L_alpha$, also commonly denoted $L_d$), and the liquid--ordered phase ($L_o$).
 
-The gel phase ($L_beta$) corresponds to a highly ordered state in which lipid acyl chains are tightly packed, with reduced lateral mobility, resulting in a relatively rigid membrane. In contrast, the liquid--disordered phase ($L_alpha$ or $L_d$) is characterized by lower chain ordering, enhanced conformational flexibility and increased lateral diffusion. The liquid--ordered phase ($L_o$), typically associated with cholesterol--rich membranes, combines features of both regimes by maintaining relatively ordered acyl chains while preserving substantial lipid mobility.
+The gel phase ($L_beta$) is a highly ordered state in which lipid acyl chains are tightly packed, with reduced lateral mobility, resulting in a relatively rigid membrane. In contrast, the liquid--disordered phase ($L_alpha$ or $L_d$) is characterized by lower chain ordering, enhanced conformational flexibility and increased lateral diffusion. The liquid--ordered phase ($L_o$), typically found in cholesterol--rich membranes, combines features of both regimes by maintaining relatively ordered acyl chains while preserving substantial lipid mobility.
 
 
 #figure(
@@ -203,7 +203,7 @@ Alternative membrane force fields exist, including so-called Berger model for li
 
 Ligand parameters for CP55,940 were generated using CGenFF, through the ligand reader & modeler module of CHARMM-GUI @kim_charmm-gui_2017. Water molecules were represented using the TIP3P model, consistent with the CHARMM parametrization. This model is commonly employed in membrane simulations and remains computationally efficient compared to more complex water models due to its lower number of degrees of freedom.
 
-The equations of motion were integrated using a 2 fs timestep, with all bonds involving hydrogen atoms constrained using the LINCS algorithm. Long-range electrostatic interactions were treated using the particle mesh Ewald (PME) method, with a real-space cutoff of 12$angstrom$. The same cutoff was applied to short-range van der Waals interactions.
+The equations of motion were integrated using a 2 fs timestep, with all bonds involving hydrogen atoms constrained using the LINCS algorithm. Long-range electrostatic interactions were computed using the particle mesh Ewald (PME) method, with a real-space cutoff of 12$angstrom$. The same cutoff was applied to short-range van der Waals interactions.
 
 Temperature was controlled using a Nosé–Hoover thermostat, while pressure was maintained using a Parrinello--Rahman barostat with semi--isotropic pressure coupling, allowing independent fluctuations in the membrane plane and along the bilayer normal. The pressure coupling time constant was set to 5 ps.
 
@@ -235,7 +235,7 @@ Broadly speaking, this quantity can be interpreted as an effective free--energy 
 
 In that sense, the free--energy profile can be reconstructed by varying the reaction coordinate of the ligand and, at each fixed position, estimating the associated probability distribution while allowing the ligand to explore the remaining degrees of freedom. Repeating this procedure over a series of overlapping windows gives access to the full profile. This procedure is known as umbrella sampling, and the ligand is maintained around a given value of the reaction coordinate by means of a harmonic biasing potential.
 
-In practice, initial configurations for these windows were generated using _steered molecular dynamics_ (SMD). After equilibration of the membrane--ligand system, the ligand was gradually pulled along the membrane normal, starting from the aqueous phase toward the bilayer center.
+In practice, initial configurations for these windows were generated using _steered molecular dynamics_ (SMD). After equilibration of the membrane--ligand system, the ligand was gradually pulled along the membrane normal, starting from the bulk aqueous phase toward the bilayer center.
 
 Then, 35 configurations were extracted along this trajectory and then used as starting points for the umbrella sampling simulations, of which each was running for 100ns. The distributions obtained in each window were subsequently combined using the weighted histogram analysis method (WHAM) in order to reconstruct the unbiased PMF, since the harmonic potential introduces a bias.
 
@@ -263,6 +263,38 @@ where $theta$ is the angle between a given C-H bond vector and the normal, and w
 Beyond these observables, molecular dynamics simulations can still be viewed as _in silico_ experiments#footnote[_Unfortunately, “simulation” has become increasingly misused to mean nothing more than “calculation.”_ -- William L. Jorgensen [*ref*]] and the trajectories provides additional qualitative insight into ligand behavior, such as insertion pathways or fine details of molecular arrangements.
 
 == Coarse-grained simulations
+
+
+#figure(
+    table(
+  columns: (auto, auto, auto, auto, auto),
+  align: (left, left, right, right, right),
+        stroke: (x, y) => if y == 0 { (bottom: 1pt + black) } else if y == 16 { (top: 1pt + black) } else { (bottom: 0.1pt + gray)},
+  
+ 
+  [*Species*], [*Structure*], [*Outer*], [*Inner*], [*Total*],
+
+  [CHOL], [Cholesterol], [1844], [1756], [3600],
+  [POPC], [PC 16:0/18:1], [1218], [120], [1338],
+  [DPPC], [PC 16:0/16:0], [688], [68], [756],
+  [PAPC], [PC 16:0/20:4], [235], [28], [263],
+  [SOPC], [PC 18:0/18:1], [194], [23], [217],
+  [SAPC], [PC 18:0/20:4], [193], [23], [216],
+  [PSPC], [PC 16:0/18:0], [148], [18], [166],
+  [PDPC], [PC 16:0/22:6], [102], [13], [115],
+  [SAPE], [PE 18:0/20:4], [171], [680], [851],
+  [SDPE], [PE 18:0/22:6], [108], [431], [539],
+  [SDPS], [PS 18:0/22:6], [0], [848], [848],
+  [SAPI], [PI 18:0/20:4], [0], [585], [585],
+  [ODLE], [PE-O 18:1/22:6], [0], [390], [390],
+  [SSM],  [SM 18:1/18:0], [205], [0], [205],
+  [SCER], [Cer 18:1/18:0], [102], [0], [102],
+  
+  [*Total*], [], [*5208*], [*4983*], [*10191*],
+    ),
+    caption: [Composition of the membrane model derived from synaptic lipidomics data.],
+)<table-lipid-composition>
+
 - Préciser la version de gromacs
 - Martini 
 - Stratégie de mapping
@@ -371,7 +403,7 @@ Hydration profiles further support the observed differences between the various 
 
 The presence of CP55,940 also shifts the distributions toward larger hydration values. This effect remains moderate in fluid DOPC membranes but becomes much more visible in DPPC systems. Altogether, these observations support the idea that both polyunsaturated lipids and ligand insertion contribute to relaxing the compact organization of ordered membranes and promote a more hydrated interfacial environment.
 
-For clarity, all hydration distributions were normalized by the number of host lipids (DOPC or DPPC), allowing direct comparison between the different membrane compositions despite the presence of mixed systems.
+For the sake of clarity, all hydration distributions were normalized by the number of host lipids (DOPC or DPPC), allowing direct comparison between the different membrane compositions despite the presence of mixed systems.
 
 
 
