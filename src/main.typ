@@ -276,12 +276,71 @@ A large fraction of the lipid species required to reproduce the target lipidomic
 
 *METTRE ICI UNE FIGURE À GAUCHE DU MAPPING, À DROITE DES PMF*
 
-Because automated procedures may not fully reproduce the properties of a given molecule, additional validation steps were performed. In particular, PMF calculations were carried out for the coarse--grained ligand and systematically compared with the atomistic counterpart. The resulting model was judged sufficiently accurate to reproduce the main insertion features of CP55,940 but perfect quantitative agreement cannot be expected. It needs to be discussed in following sections.
+Because automated procedures may not fully reproduce the properties of a given molecule, additional validation steps were performed. In particular, PMF calculations were carried out for the coarse--grained ligand and systematically compared with the atomistic counterpart. The resulting model was judged sufficiently accurate to reproduce the main insertion features of CP55,940 but perfect quantitative agreement cannot be expected. The remaining discrepancies will be discussed in following sections.
 
 === Membrane composition
 
-Montrer composition représentative des 15 especes majoritaires (75%).
-Montrer composition déplétée en omega3 et comment ça a été fait.
+To move from simplified binary mixtures to more complex models, we constructed a membrane compositions inspired by lipidomics analysis of the synaptic junction [*ref*]. Rather than attempting to reproduce the complete lipidome, which contains a very large number of molecular species, we selected the fifteen most abundant lipid species identified in these datasets. Together, these species account for approximately 75% of the total membrane composition.
+
+
+#figure(
+  grid(
+    columns: (auto, 1fr),
+    gutter: 1em,
+    align: (center + horizon, center + horizon),
+
+    text(size: 10pt)[
+      #table(
+        columns: (auto, auto, auto, auto, auto),
+        align: (left, left, right, right, right),
+        stroke: (x, y) => if y == 0 {
+          (bottom: 1pt + black)
+        } else if y == 16 {
+          (top: 1pt + black)
+        } else {
+          (bottom: 0.1pt + gray)
+        },
+
+        [*Species*], [*Structure*], [*Outer*], [*Inner*], [*Total*],
+
+        [CHOL], [Cholesterol], [923], [878], [1801],
+        [POPC], [PC 16:0/18:1], [609], [60], [669],
+        [DPPC], [PC 16:0/16:0], [344], [34], [378],
+        [PAPC], [PC 16:0/20:4], [118], [14], [132],
+        [SOPC], [PC 18:0/18:1], [97], [12], [109],
+        [SAPC], [PC 18:0/20:4], [97], [12], [109],
+        [PSPC], [PC 16:0/18:0], [74], [9], [83],
+        [PDPC], [PC 16:0/22:6], [51], [7], [58],
+        [SAPE], [PE 18:0/20:4], [86], [340], [426],
+        [SDPE], [PE 18:0/22:6], [54], [216], [270],
+        [SDPS], [PS 18:0/22:6], [0], [424], [424],
+        [SAPI], [PI 18:0/20:4], [0], [293], [293],
+        [ODLE], [PE-O 18:1/18:1], [0], [195], [195],
+        [SSM],  [SM 18:1/18:0], [103], [0], [103],
+        [SCER], [Cer 18:1/18:0], [51], [0], [51],
+
+        [*Total*], [], [*2607*], [*2494*], [*5101*],
+      )
+    ],
+
+    image("rsrc/fig-piechart-synaptic.png", width: 105%),
+  ),
+    caption: [Lipid composition of the reference synaptic membrane model. The fifteen most abundant lipid species (~75% of the experimental lipidome) were retained while preserving leaflet asymmetry. The pie chart shows the corresponding distribution of lipid classes.],
+)<fig-realistic-composition>
+
+
+
+Particular attention was paid to preserving the asymmetric organization of the membrane. Lipids known to be enriched in the outer leaflet, such as sphingomyelins and ceramides, were assigned to the extracellular side, whereas phosphatidylserines, phosphatidylinositols and plasmalogens were concentrated in the inner leaflet. The resulting membrane composition is reported in @fig-realistic-composition, with the corresponding distribution of lipid families summarized in a pie chart.
+
+In addition to this reference membrane, a second composition was constructed to study the role of depletion in PUFAs. Experimental lipidomics studies have reported reduction in both $omega$--3 and $omega$--6 lipid species under pathological conditions [*ref*].
+
+
+
+To reproduce this trend, we adopted a simplified depletion strategy. All polyunsaturated acyl  chains, irrespective of their original degree of unsaturation, were systematically replaced by monounsaturated 18:1 chains. For instance, lipids containing arachidonic acid (20:4) or decosahexaenoic acid (22:6) were converted to the corresponding 18:1 analogues whenever available in the MARTINI 3 lipid library. Thus, SAPE (18:0/20:4) and SDPE (18:0/22:6) were replaced by SOPE (18:0/18:1), while SDPS (18:0/22:6) was replaced by SOPS (18:0/18:1).
+
+In a few cases, no direct monounsaturated counterpart was available. The replacement was then performed using the closest lipid species within the M3 library while preserving the headgroup chemistry. For example, SAPI (18:0/20:4) was replaced by POPI (16:0/18:1), as no SOPI model was available. A similar approach was applied to the plasmalogen fraction.
+
+This procedure preserves the overall distribution of lipid headgroups, and the asymmetry between leaflets while strongly reducing the abundance of $omega$--3 and $omega$--6 chains. The resulting membrane, hereby reported in @table-depleted-composition, should therefore be viewed not as a quantitative reconstruction of a specific pathological state, but as a limiting model of PUFA depletion.
 
 #figure(
     table(
@@ -292,26 +351,24 @@ Montrer composition déplétée en omega3 et comment ça a été fait.
  
   [*Species*], [*Structure*], [*Outer*], [*Inner*], [*Total*],
 
-  [CHOL], [Cholesterol], [1844], [1756], [3600],
-  [POPC], [PC 16:0/18:1], [1218], [120], [1338],
-  [DPPC], [PC 16:0/16:0], [688], [68], [756],
-  [PAPC], [PC 16:0/20:4], [235], [28], [263],
+  [CHOL], [Cholesterol], [923], [878], [1801],
+  [POPC], [PC 16:0/18:1], [778], [169], [947],
+  [DPPC], [PC 16:0/16:0], [344], [34], [378],
   [SOPC], [PC 18:0/18:1], [194], [23], [217],
-  [SAPC], [PC 18:0/20:4], [193], [23], [216],
-  [PSPC], [PC 16:0/18:0], [148], [18], [166],
-  [PDPC], [PC 16:0/22:6], [102], [13], [115],
-  [SAPE], [PE 18:0/20:4], [171], [680], [851],
-  [SDPE], [PE 18:0/22:6], [108], [431], [539],
-  [SDPS], [PS 18:0/22:6], [0], [848], [848],
-  [SAPI], [PI 18:0/20:4], [0], [585], [585],
-  [ODLE], [PE-O 18:1/22:6], [0], [390], [390],
-  [SSM],  [SM 18:1/18:0], [205], [0], [205],
-  [SCER], [Cer 18:1/18:0], [102], [0], [102],
+  [PSPC], [PC 16:0/18:0], [74], [9], [83],
+  [SOPE], [PE 18:0/18:1], [139], [556], [695],
+  [SOPS], [PS 18:0/18:1], [0], [424], [424],
+  [POPI], [PI 16:0/18:1], [0], [293], [293],
+  [DOLE], [PE-O 18:1/18:1], [0], [195], [195],
+  [SSM],  [SM 18:1/18:0], [102], [0], [102],
+  [SCER], [Cer 18:1/18:0], [51], [0], [51],
   
-  [*Total*], [], [*5208*], [*4983*], [*10191*],
+  [*Total*], [], [*2604*], [*2581*], [*5185*],
     ),
-    caption: [Composition of the membrane model derived from synaptic lipidomics data.],
-)<table-lipid-composition>
+    caption: [Simplified $omega$--3/$omega$--6 depleted membrane composition.],
+)<table-depleted-composition>
+
+
 
 
 
