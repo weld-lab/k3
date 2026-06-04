@@ -110,7 +110,7 @@ Cellular communication relies on molecular signals that must be detected and int
 
 Traditional pharmacological frameworks implicitly assume that neurotransmitters diffuse through aqueous media before encountering their receptor @ritter_rang_2020. This picture, while adequate for hydrophilic signaling molecules, becomes incomplete in the case of the endocannabinoid system (ECS) --- a central regulator of neural activity, and a major pharmacological target in neurological and metabolic disorders. Endocannabinoids are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids @venance_systeme_2004. This biochemical origin confers lipophilic properties, meaning that these molecules preferentially partition into hydrophobic environments rather than the surrounding aqueous phase.
 
-Among the main molecular targets of the ECS, the cannabinoid receptor type 1 (CB1) is one of the most abundantly expressed G protein-coupled receptors (GPCRs) in the mammalian central nervous system. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk @hurst_lipid_2010 @jakowiecki_hydrophobic_2020. This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 @thakur_cb1_2005. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212-2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist.
+Among the main molecular targets of the ECS, the cannabinoid receptor type 1 (CB1) is one of the most abundantly expressed G protein-coupled receptors (GPCRs) in the mammalian central nervous system. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk @hurst_lipid_2010 @jakowiecki_hydrophobic_2020. This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 @thakur_cb1_2005. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212--2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist.
 
 The presynaptic membrane environment, which constitutes an essential component of endocannabinoid signaling, is enriched in sterols, phospholipids, and sphingolipids @ahrends_synaptoneurolipidomics_2025 @lauwers_membrane_2016. Lipidomic analyses have revealed significant compositional alterations under pathological conditions, including depletion of $omega$--3 and $omega$--6 polyunsaturated fatty acids (PUFAs) in patients experiencing a first psychotic episode @le_analysis_2023 @frajerman_lipides_2020. From a biophysical standpoint, such compositional shifts modify membrane properties including acyl chain order, interfacial hydration, bilayer thickness and bending rigidity --- parameters that directly influence ligand partitioning and mobility within the bilayer. Understanding how membrane composition modulates these ligand--membrane interactions therefore appears essential for describing the early physicochemical steps preceding CB1 engagement.
 
@@ -145,7 +145,7 @@ The gel phase ($L_beta$) is a highly ordered state in which lipid acyl chains ar
 Broad coexistence regions also appear in the diagram, such as $L_alpha + L_o$ or $L_beta + L_o$, indicating that different phases may coexist within the same membrane system depending on cholesterol concentration and temperature. Such coexistence reflects the heterogeneous nature of multicomponent membranes, in which local lipid organization and dynamics strongly depend on composition and thermodynamic conditions. Although phase equilibria are temperature--dependent, physiological conditions typically constrain this parameter within a narrow range.
 
 
-In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing @heberle_phase_2011 @allemand_etude_2024, leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipids rafts, this mesoscale structure reflects the competition between entropy, which favors mixing, and enthalpy, which favors lipid--lipid associations, and results in regions exhibiting various mechanical properties.
+In multicomponent systems, compositional heterogeneity may emerge at larger length scales. Lipid--lipid interactions between different species can drive partial lateral demixing @heberle_phase_2011 @allemand_etude_2024, leading to the formation of distinct domains within the same bilayer. Often discussed in the context of lipid rafts, this mesoscale structure reflects the competition between entropy, which favors mixing, and enthalpy, which favors lipid--lipid associations, and results in regions exhibiting various mechanical properties.
 
 == Ligand–membrane coupling
 
@@ -167,16 +167,16 @@ While lipophilicity is often invoked to rationalize membrane affinity, a single 
     [*Ligand*], [*Class*], [*logP*],
 
     [CP55,940], [CB1 agonist], [6.1],
-      [WIN55.212-2], [CB1 agonist], [4.4],
+      [WIN55.212--2], [CB1 agonist], [4.4],
     [SR141716A  ], [CB1 antagonist / inverse agonist], [6.5],
       [$Delta$9-THC], [Major phytocannabinoid], [7.0],
-    [2-AG], [Endocannabinoid], [5.3],
+    [2--AG], [Endocannabinoid], [5.3],
   ),
     caption: [Octanol/water partition coefficients (logP) of representative cannabinoid ligands. It highlights lipophilic nature of CB1 ligands.  For comparison, glucose exhibits a logP of approximately −2.6. All values were retrieved from PubChem.],
 ) <table-ligands-logp>
 
 
-Another limitation is that logP constitutes a purely thermodynamic descriptor and therefore provides little insight into the microscopic mechanism of insertion. It does not inform on whether a ligand preferentially enters through hydrophobic regions, whether it should reorient upon insertion, or how it organizes once embedded within the bilayer. Generally, it is advised to compute potential of means force (PMFs --- that is, free--energy profiles evaluated along a chosen reaction coordinate --- if one seeks better descriptions. PMFs provide access to the energetic cost associated with membrane entry, identify possible interfacial minima and reveal insertion barriers that could not be inferred from a global partition coefficient alone.
+Another limitation is that logP constitutes a purely thermodynamic descriptor and therefore provides little insight into the microscopic mechanism of insertion. It does not inform on whether a ligand preferentially enters through hydrophobic regions, whether it should reorient upon insertion, or how it organizes once embedded within the bilayer. Generally, it is advised to compute potential of mean force (PMFs) --- that is, free--energy profiles evaluated along a chosen reaction coordinate --- if one seeks better descriptions. PMFs provide access to the energetic cost associated with membrane entry, identify possible interfacial minima and reveal insertion barriers that could not be inferred from a global partition coefficient alone.
 
 From this perspective, the membrane can be treated as an energy landscape experienced by the ligand. While such an approach is necessary to quantify insertion and identify potential barriers, it remains a reduced description of the interaction.  The question arises: what is the physical nature of this interaction? A first level of consideration is steric. Much like inclusions in liquid crystals, an inserted ligand can be expected to behave as a local defect, perturbing lipid packing and altering the orientational order of neighboring acyl chains. Additional mechanical effects may also emerge; the ligand may locally displace lipids upon insertion, generating curvature stress or elastic deformation of the surrounding.
 
@@ -285,7 +285,7 @@ $
 
 where $theta$ is the angle between a given C-H bond vector and the normal, and where $angle.l dot angle.r$ denotes a statistical average over time and lipids of the same species. The order parameter was computed for each carbon atom along the acyl chains using gorder @bartos_gorder_2025, resulting in a position-dependent profile that reflects the variation of chain ordering from the headgroup region to the bilayer core. It is often understood that a higher value corresponds to a more rigid (more ordered) system, whereas values closer to zero indicate a more fluid system. However, this interpretation should be treated with caution, since the parameter only reflects an angular measurement.
 
-Beyond these observables, molecular dynamics simulations can still be viewed as _in silico_ experiments#footnote[_Unfortunately, “simulation” has become increasingly misused to mean nothing more than “calculation.”_ -- William L. Jorgensen @jorgensen_foundations_2013] and the trajectories provides additional qualitative insight into ligand behavior, such as insertion pathways or fine details of molecular arrangements.
+Beyond these observables, molecular dynamics simulations can still be viewed as _in silico_ experiments#footnote[_Unfortunately, “simulation” has become increasingly misused to mean nothing more than “calculation.”_ -- William L. Jorgensen @jorgensen_foundations_2013] and the trajectories provide additional qualitative insight into ligand behavior, such as insertion pathways or fine details of molecular arrangements.
 
 == Coarse-grained simulations
 
@@ -305,7 +305,7 @@ Because automated procedures may not fully reproduce the properties of a given m
 
 === Membrane composition
 
-To move from simplified binary mixtures to more complex models, we constructed a membrane compositions inspired by lipidomics analysis of the synaptic junction @borgmeyer_multiomics_2021. Rather than attempting to reproduce the complete lipidome, which contains a very large number of molecular species, we selected the fifteen most abundant lipid species identified in these datasets. Together, these species account for approximately 75% of the total membrane composition.
+To move from simplified binary mixtures to more complex models, we constructed membrane compositions inspired by lipidomics analysis of the synaptic junction @borgmeyer_multiomics_2021. Rather than attempting to reproduce the complete lipidome, which contains a very large number of molecular species, we selected the fifteen most abundant lipid species identified in these datasets. Together, these species account for approximately 75% of the total membrane composition.
 
 
 #figure(
@@ -360,11 +360,11 @@ Particular attention was paid to preserving the asymmetric organization of the m
 In addition to this reference membrane, a second composition was constructed to study the role of depletion in PUFAs. Experimental lipidomics studies have reported reduction in both $omega$--3 and $omega$--6 lipid species under pathological conditions @le_analysis_2023 @frajerman_lipides_2020.
 
 
-To reproduce this trend, we adopted a simplified depletion strategy. All polyunsaturated acyl  chains, irrespective of their original degree of unsaturation, were systematically replaced by monounsaturated 18:1 chains. For instance, lipids containing arachidonic acid (20:4) or decosahexaenoic acid (22:6) were converted to the corresponding 18:1 analogues whenever available in the MARTINI 3 lipid library. Thus, SAPE (18:0/20:4) and SDPE (18:0/22:6) were replaced by SOPE (18:0/18:1), while SDPS (18:0/22:6) was replaced by SOPS (18:0/18:1).
+To reproduce this trend, we adopted a simplified depletion strategy. All polyunsaturated acyl  chains, irrespective of their original degree of unsaturation, were systematically replaced by monounsaturated 18:1 chains. For instance, lipids containing arachidonic acid (20:4) or docosahexaenoic acid (22:6) were converted to the corresponding 18:1 analogues whenever available in the MARTINI 3 lipid library. Thus, SAPE (18:0/20:4) and SDPE (18:0/22:6) were replaced by SOPE (18:0/18:1), while SDPS (18:0/22:6) was replaced by SOPS (18:0/18:1).
 
 In a few cases, no direct monounsaturated counterpart was available. The replacement was then performed using the closest lipid species within the M3 library while preserving the headgroup chemistry. For example, SAPI (18:0/20:4) was replaced by POPI (16:0/18:1), as no SOPI model was available. A similar approach was applied to the plasmalogen fraction.
 
-This procedure preserves the overall distribution of lipid headgroups, and the asymmetry between leaflets while strongly reducing the abundance of $omega$--3 and $omega$--6 chains. The resulting membrane, hereby reported in @table-depleted-composition, should therefore be viewed not as a quantitative reconstruction of a specific pathological state, but as a limiting model of PUFA depletion.
+This procedure preserves the overall distribution of lipid headgroups, and the asymmetry between leaflets while strongly reducing the abundance of $omega$--3 and $omega$--6 chains. The resulting membrane, reported in @table-depleted-composition, should therefore be viewed not as a quantitative reconstruction of a specific pathological state, but as a limiting model of PUFA depletion.
 
 #figure(
     table(
