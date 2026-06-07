@@ -408,12 +408,33 @@ CP55,940 molecules were then introduced at a concentration of 10 mol%, correspon
 
 
 == Computational performances
-- Jean-Zay, Mesocentre
-- Taille des systemes
-- ns/day performance
-- GPU/CPU usage 
-- coût total en temps de calcul
-- Comment être reproductible? les replica
+
+#figure(
+    text(size:11.5pt)[#table(
+        columns: (auto, auto, auto, auto, auto, auto),
+        align: (left, center, center, center, center, right),
+
+        stroke: (x, y) =>
+            if y == 0 {
+                (bottom: 1pt + black)
+            } else if y == 3 {
+                (top: 1pt + black)
+            } else {
+                (bottom: 0.1pt + gray)
+            },
+
+        [*Model*], [*GROMACS*], [*System size*], [*Hardware*],
+        [*Performance*], [*Compute time*],
+
+        [All-atom], [2018.2], [$tilde$60k atoms],
+        [128 CPU cores], [$tilde$75 ns/day], [355k CPUh],
+
+        [MARTINI3], [2026.1], [$tilde$150k particles],
+        [NVIDIA V100], [$tilde$1200 ns/day], [1k GPUh],
+    )],
+    caption: [Computational resources used throughout this work. All-atom simulations were performed on the Mesocentre de Franche--Comté. MARTINI3 simulations were carried out on the Jean Zay national supercomputer through the ANR LADY.],
+)<table-ressources>
+
 
 =  Atomistic results: lipid dependent ligand-membrane coupling (5-6 pages)
 
