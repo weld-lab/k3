@@ -542,12 +542,61 @@ For the sake of clarity, all hydration distributions were normalized by the numb
 
 = Extension to lipidomic context: Coarse-grained results (4-5 pages)
 
-À voir où on met le multiscale consistency. En premier j'oserais dire.
-
 == Multiscale consistency
-- Comparison between atomistics and CG results
-- Conserved vs scale-dependent features
-- PMF.
+
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+
+    align: (left, center, center, center),
+
+    stroke: (x, y) => if y == 0 {
+      (bottom: 1pt + black)
+    } else if y == 3 {
+      (top: 1pt + black)
+    } else {
+      (bottom: 0.5pt + gray.lighten(50%))
+    },
+
+    [*Model*], [*APL (nm²)*], [*Thickness (nm)*], [*$S_#text[CH]$*],
+
+    [All-atom],
+      [0.68 $plus.minus$ 0.03],
+      [3.86 $plus.minus$ 1.59],
+      [0.113 $plus.minus$ 0.156],
+
+    [MARTINI3],
+    [0.65 $plus.minus$ 0.03],
+    [3.86 $plus.minus$ 1.23],
+    [0.333 $plus.minus$ 0.216],
+  ),
+
+  caption: [
+    Structural membrane properties obtained from all-atom and MARTINI3 simulations of DOPC bilayers. Uncertainties correspond to three standard deviations ($3sigma$).
+  ],
+) <table-multiscale-consistency>
+
+
+
+
+To study the consistency between all--atom and coarse--grained descriptions, a DOPC membrane was simulated using both representations and compared. The coarse--grained model contained 128 lipids per leaflet, whereas the atomistic models correspond to those previously studied (_i.e._ 100 lipid per leaflet for structural properties, 64 per leaflet for PMF). The structural properties of the membranes are reported in @table-multiscale-consistency.
+
+The area per lipid obtained with the all--atom model is in excellent agreement with the M3 value, the difference remaining within the three--sigma uncertainty interval. Similarly, both models predict an identical membrane thickness of 3.86 nm. These results indicate that the coarse--grained representation reproduces nicely the global structural organization of the membrane.
+
+
+Meanwhile, larger discrepancies are observed for the deuterium order parameter, but a quantitative comparison should be interpreted with caution. In atomistic simulations, the deuterium order parameter is defined from the orientation of C--H bonds relative to the membrane normal. In contrast, since hydrogen atoms are not explicitly represented in M3, the corresponding quantity is estimated from C--C bonds: the two observables are not strictly equivalent. Still, both models remain consistent with a fluid state, although the coarse--grained representation appears somewhat more ordered. This behavior may arise from the reduced number of degrees of freedom associated with coarse--graining, which might restrict local conformational fluctuations.
+
+
+#figure(
+    image("rsrc/fig-consistencies/fig-pmf-cg-vs-aa.png", width:80%),
+    caption: [Potential of mean force associated with CP55,940 insertion into a DOPC bilayer obtained at atomistic and coarse-grained resolutions.],
+)<fig-pmf-cg-aa>
+
+
+A more stringent test is provided by free--energy profiles  associated with membrane insertion of CP55,940. As shown in @fig-pmf-cg-aa, both models predict favorable membrane partitioning. In particular, the minima are located at comparable depths within the bilayer and exhibit similar amplitudes, close to -11 kcal$dot$mol$#text[]^(-1)$. Differences remain in the detailed shape of the PMF curve. In particular, the atomistic profile exhibits a significant free--energy increase toward the bilayer center, which is broader within the M3 model. As a consequence, the coarse--grained ligand is expected to explore a larger fraction of the bilayer interior and may diffuse more readily once inserted. This likely suggests a stronger effective hydrophobicity of the coarse--grained representation. However, such an interpretation should remain cautious: if it is known that M3 force field generally produce faster diffusion dynamics than atomistic models, the apparent confinement observed in the atomistic PMF may also partly result from incomplete sampling of slow rearrangements. Therefore, the observed differences cannot be unambiguously attributed to the ligand parametrization alone.
+
+
+Overall, the M3 model reproduces the essential structural characteristics of the membrane and preserves the main thermodynamic features of CP55,940 insertion. Although quantitative differences remain in orientational descriptors and in the fine structure of the PMF, the overall insertion mechanism appears conserved across resolutions. These results support the use of the coarse--grained model for exploring larger membrane systems.
 
 == Realistic membrane compositions
 - w6 modulation 
