@@ -100,7 +100,7 @@
 #outline()
 
 #pagebreak()
-#set page(columns:1, header:[_Ligand-membrane coupling as a pre-filter for receptor engagement_])
+#set page(columns:1, header:[_Phase--dependent coupling of a cannabinoid ligand in polyunsaturated membranes_])
 
 = Introduction (4-5 pages)
 
@@ -297,9 +297,14 @@ Coarse--grained molecular dynamics was employed to study ligand--membrane coupli
 
 To address these limitations, we employed the MARTINI3 (M3) @souza_martini_2021  coarse--grained force field, in which several atoms are represented by a single interaction site. This reduction in resolution considerably decreases the computational cost of the simulations, allowing larger membrane patches and longer trajectories to be explored.
 
-A large fraction of the lipid species required to reproduce the target lipidomic compositions is already available within the M3 ecosystem @hilpert_facilitating_2023. However, the parametrization of the ligand itself remains a critical step. In the present work, CP55,940 was coarse--grained using the Auto--MartiniM3 @szczuka_fast_2026 tool, which provides an automated starting point for the construction of M3 models of small molecules. The availability of Auto--MartiniM3, together with the extensive documentation and validation studies accompanying M3, constituted an additional motivation for selecting this force field. Starting from the atomistic structure of CP55,940, Auto--MartiniM3 generated an initial mapping and set of interaction parameters, illustrated in *fig*.
+A large fraction of the lipid species required to reproduce the target lipidomic compositions is already available within the M3 ecosystem @hilpert_facilitating_2023. However, the parametrization of the ligand itself remains a critical step. In the present work, CP55,940 was coarse--grained using the Auto--MartiniM3 @szczuka_fast_2026 tool, which provides an automated starting point for the construction of M3 models of small molecules. The availability of Auto--MartiniM3, together with the extensive documentation and validation studies accompanying M3, constituted an additional motivation for selecting this force field. Starting from the atomistic structure of CP55,940, Auto--MartiniM3 generated an initial mapping and set of interaction parameters, illustrated in @fig-mapping.
 
-*METTRE ICI UNE FIGURE À GAUCHE DU MAPPING, À DROITE DES PMF*
+
+#figure(
+    image("rsrc/fig-mapping/cg.png", width:80%),
+    caption: [MARTINI3 parametrization of CP55,940 obtained with Auto--MartiniM3. (a) Mapping strategy showing the correspondence between atomistic groups and coarse--grained beads. (b) Atomistic (left) and coarse--grained (right) representations of the ligand. Colors indicate MARTINI bead types: TP2d (red), SC1 (blue), TC5 (green) and TC1 (yellow).],
+)<fig-mapping>
+
 
 Because automated procedures may not fully reproduce the properties of a given molecule, additional validation steps were performed. In particular, PMF calculations were carried out for the coarse--grained ligand and systematically compared with the atomistic counterpart. The resulting model was judged sufficiently accurate to reproduce the main insertion features of CP55,940 but perfect quantitative agreement cannot be expected. The remaining discrepancies will be discussed in following sections.
 
@@ -540,7 +545,7 @@ For the sake of clarity, all hydration distributions were normalized by the numb
 )<fig-hydration> 
 
 
-= Extension to lipidomic context: Coarse-grained results (4-5 pages)
+= Extension to lipidomic context: coarse-grained results (4-5 pages)
 
 == Multiscale consistency
 
@@ -602,12 +607,6 @@ Overall, the M3 model reproduces the essential structural characteristics of the
 - w6 modulation 
 - cholesterol content
 - headgroups
-
-== Lateral organisation and partitioning
-- Ligand spatial distribution
-- Phase preference
-- Demixing, rafts, collective membrane behavior
-
 
 = Discussion (4-5 pages)
 
