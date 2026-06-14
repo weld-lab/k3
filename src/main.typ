@@ -435,7 +435,7 @@ CP55,940 molecules were then introduced at a concentration of 10 mol%, correspon
         [128 CPU cores], [$tilde$75 ns/day], [355k CPUh],
 
         [MARTINI3], [2026.1], [$tilde$150k particles],
-        [NVIDIA V100], [$tilde$1200 ns/day], [1k GPUh],
+        [NVIDIA V100], [$tilde$1200 ns/day], [1.3k GPUh],
     )],
     caption: [Computational resources used throughout this work. All-atom simulations were performed on the Mesocentre de Franche--Comté. MARTINI3 simulations were carried out on the Jean Zay national supercomputer through the ANR LADY.],
 )<table-ressources>
