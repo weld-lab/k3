@@ -133,8 +133,9 @@ Beneath this interfacial layer lies the hydrophobic core, mainly determined by t
 
 Cell membranes also contain other essential lipids such as sterols and sphingomyelins. Among sterols, cholesterol plays a role in regulating membrane organization, fluidity and structural stability. Through their collective interactions, these different lipid species give rise to distinct membrane phase states. The phase diagram shown in @fig-phase-coexistence-cholesterol corresponds to a model membrane composed of DPPC and cholesterol. The horizontal axis represents the cholesterol mole fraction, _i.e._ the proportion of cholesterol molecules relative to the total number of lipid molecules in the membrane mixture, while the vertical axis corresponds to temperature. Depending on these two parameters, the membrane may adopt different physical states, including the gel phase ($L_beta$), the liquid--disordered phase ($L_alpha$, also commonly denoted $L_d$), and the liquid--ordered phase ($L_o$).
 
-The gel phase ($L_beta$) is a highly ordered state in which lipid acyl chains are tightly packed, with reduced lateral mobility, resulting in a relatively rigid membrane. In contrast, the liquid--disordered phase ($L_alpha$ or $L_d$) is characterized by lower chain ordering, enhanced conformational flexibility and increased lateral diffusion. The liquid--ordered phase ($L_o$), typically found in cholesterol--rich membranes, combines features of both regimes by maintaining relatively ordered acyl chains while preserving substantial lipid mobility.
 
+
+The gel phase ($L_beta$) represents a highly ordered state. Within this regime, a tight packing of the lipid acyl chains is observed alongside a marked reduction in lateral mobility, which ultimately results in a rigid bilayer structure. A lower degree of chain ordering and enhanced conformational flexibility are exhibited by the liquid--disordered phase ($L_alpha$ or $L_d$), further characterized by higher lateral diffusion rates. The liquid--ordered phase ($L_o$), typically found in cholesterol--rich membranes, combines features of both regimes.
 
 #figure(
     image("rsrc/phase-coexistence-cholesterol-with-annotations.jpeg", width:75%),
@@ -178,7 +179,7 @@ While lipophilicity is often invoked to rationalize membrane affinity, a single 
 
 Another limitation is that logP constitutes a purely thermodynamic descriptor and therefore provides little insight into the microscopic mechanism of insertion. It does not inform on whether a ligand preferentially enters through hydrophobic regions, whether it should reorient upon insertion, or how it organizes once embedded within the bilayer. Generally, it is advised to compute potential of mean force (PMFs) --- that is, free--energy profiles evaluated along a chosen reaction coordinate --- if one seeks better descriptions. PMFs provide access to the energetic cost associated with membrane entry, identify possible interfacial minima and reveal insertion barriers that could not be inferred from a global partition coefficient alone.
 
-From this perspective, the membrane can be treated as an energy landscape experienced by the ligand. While such an approach is necessary to quantify insertion and identify potential barriers, it remains a reduced description of the interaction.  The question arises: what is the physical nature of this interaction? A first level of consideration is steric. Much like inclusions in liquid crystals, an inserted ligand can be expected to behave as a local defect, perturbing lipid packing and altering the orientational order of neighboring acyl chains. Additional mechanical effects may also emerge; the ligand may locally displace lipids upon insertion, generating curvature stress or elastic deformation of the surrounding.
+From this perspective, the membrane can be treated as an energy landscape experienced by the ligand. While such an approach is necessary to quantify insertion and identify potential barriers, it remains a reduced description of the interaction.  The question arises: what is the physical nature of this interaction? A first level of consideration is steric. Much like inclusions in liquid crystals, an inserted ligand is expected to behave as a local defect, perturbing lipid packing and altering the orientational order of neighboring acyl chains. Additional mechanical effects may also emerge; the ligand may locally displace lipids upon insertion, generating curvature stress or elastic deformation of the surrounding.
 
 Chemical and electrostatic contributions must also be considered. The membrane interface is characterized by a certain distribution of charges and dipoles, and screening effects are not necessarily uniform across the interfacial region. From a physical standpoint, the bilayer constitutes an electromagnetic environment, within which local interactions may further modulate ligand behavior.
 
@@ -209,13 +210,13 @@ Fundamentally, this work is guided by the idea that membrane composition must be
 
 All--atom membrane systems were, for fluid systems, constructed using the CHARMM--GUI membrane builder @lee_charmm-gui_2019. Gel-like membranes were built by hand from a SLipids pre-equilibrated patch#footnote[#link("http://www.fos.su.se/~sasha/SLipids/Downloads.html")]. Symmetric bilayers composed of 100 lipids per leaflet were generated under periodic boundary conditions, resulting in lamellar multilayer systems separated by aqueous slabs.
 
-Two reference phospholipids were primarily considered in order to explore distinct membrane physical states. DOPC bilayers were used to represent a fluid liquid--disordered phase at physiological temperature, while DPPC membranes were simulated at 25°C, a temperature well below the main phase transition temperature of DPPC ($tilde 41$°C). This ensures that the membrane remains in a stable gel-like phase during the simulations and avoids the strong fluctuations associated with the transition regime. Working with these two systems allows us to contrast ligand behavior in environments characterized by markedly different packing and chain ordering properties.
+To capture two completely distinct membrane physical states, DOPC and DPPC were chosen as reference phospholipids. At physiological temperature (37°C), DOPC bilayers represent a fluid, liquid--disordered phase. Conversely, DPPC--membrane were simulated at 25°C --- well below their main phase transition temperature of $tilde$ 41°C. Setting the temperature here locks the membrane into a stable, gel--like phase, deliberately avoiding the strong fluctuations associated with the transition regime. Working with these two systems allows to study how ligand behavior changes in environments with different packing and chain ordering properties.
 
 In addition to these reference membranes, compositional perturbations were introduced by partially substituting the host lipids with polyunsaturated species. In practice, 10 % of the lipids were replaced by either SAPC ($omega$--6) or SDPC ($omega$--3), leading to six distinct membrane compositions in total. These substitutions introduce highly unsaturated acyl chains into otherwise well-defined bilayers and allow us to probe the influence of polyunsaturated lipids on ligand–membrane interactions.
 
 Due to the planar geometry of the bilayer and the use of periodic boundary conditions, the simulated systems naturally adopt a stacked lamellar configuration. To avoid interactions between periodic images of adjacent membranes, a sufficiently large aqueous slab was introduced, resulting in a hydration level of approximately 45 water molecules per lipid. Sodium and chloride ions were added to reproduce an isotonic salt concentration (0.15 M NaCl) representative of physiological conditions.
 
-System preparation followed the standard equilibration procedure provided by CHARMM--GUI. After energy minimization, a restrained NVT equilibration was performed for 500 ps, followed by a restrained NPT equilibration of 1 ns using Berendsen pressure coupling. The production equilibration runs were then performed for 100–300 ns, depending on membrane composition, to allow the bilayers to reach equilibrium before further analysis. This was especially important for gel-phase membranes, which exhibit slower lipid dynamics and therefore require longer equilibration times.
+System preparation followed the standard equilibration procedure provided by CHARMM--GUI. After energy minimization, a restrained NVT equilibration was performed for 500 ps, followed by a restrained NPT equilibration of 1 ns using Berendsen pressure coupling. The production equilibration runs were then performed for 100–300 ns, depending on membrane composition, to allow the bilayers to reach equilibrium before further analysis. This was especially important for gel phase membranes, which exhibit slower lipid dynamics and therefore require longer equilibration times.
 
 
 The ligand CP55,940 was introduced at concentrations reaching up to 10 mol% relative to the lipid content, after equilibration of membranes. To ease spontaneous insertion while avoiding artificial aggregation in the aqueous phase, ligand molecules were initially positioned close to the membrane surface. A pulling restraint along the membrane normal was applied during the early stages of equilibration in order to keep the ligands near the bilayer interface. After ligand insertion, an additional system relaxation step was performed. The systems were first subjected to energy minimization in order to remove possible steric clashes introduced during ligand placement. A short equilibration stage was then carried out before starting the production simulations.
@@ -226,7 +227,7 @@ All--atom molecular dynamics simulations were performed using GROMACS 2018.2. In
 
 Alternative membrane force fields exist, including so-called Berger model for lipids. However, CHARMM36m is known to correctly treat polar functional groups such as hydroxyl (-OH) moieties, which are relevant for describing ligand--membrane interactions involving hydrogen bonding at the membrane interface.
 
-Ligand parameters for CP55,940 were generated using CGenFF, through the ligand reader & modeler module of CHARMM-GUI @kim_charmm-gui_2017. Water molecules were represented using the TIP3P model, consistent with the CHARMM parametrization. This model is commonly employed in membrane simulations and remains computationally efficient compared to more complex water models due to its lower number of degrees of freedom.
+Ligand parameters for CP55,940 were generated using CGenFF, through the use of the ligand reader & modeler module of CHARMM-GUI @kim_charmm-gui_2017. Water molecules were represented using the TIP3P model, consistent with the CHARMM parametrization. This model is commonly employed in membrane simulations and remains computationally efficient compared to more complex water models due to its lower number of degrees of freedom.
 
 The equations of motion were integrated using a 2 fs timestep, with all bonds involving hydrogen atoms constrained using the LINCS algorithm. Long-range electrostatic interactions were computed using the particle mesh Ewald (PME) method, with a real-space cutoff of 12$angstrom$. The same cutoff was applied to short-range van der Waals interactions.
 
@@ -287,7 +288,7 @@ where $theta$ is the angle between a given C-H bond vector and the normal, and w
 
 Beyond these observables, molecular dynamics simulations can still be viewed as _in silico_ experiments#footnote[_Unfortunately, “simulation” has become increasingly misused to mean nothing more than “calculation.”_ -- William L. Jorgensen @jorgensen_foundations_2013] and the trajectories provide additional qualitative insight into ligand behavior, such as insertion pathways or fine details of molecular arrangements.
 
-== Coarse-grained simulations
+== Coarse--grained simulations
 
 
 === Martini 3 force field and ligand parametrization
@@ -369,7 +370,7 @@ To reproduce this trend, we adopted a simplified depletion strategy. All polyuns
 
 In a few cases, no direct monounsaturated counterpart was available. The replacement was then performed using the closest lipid species within the M3 library while preserving the headgroup chemistry. For example, SAPI (18:0/20:4) was replaced by POPI (16:0/18:1), as no SOPI model was available. A similar approach was applied to the plasmalogen fraction.
 
-This procedure preserves the overall distribution of lipid headgroups, and the asymmetry between leaflets while strongly reducing the abundance of $omega$--3 and $omega$--6 chains. The resulting membrane, reported in @table-depleted-composition, should therefore be viewed not as a quantitative reconstruction of a specific pathological state, but as a limiting model of PUFA depletion.
+This procedure preserves the overall distribution of lipid headgroups, and the asymmetry between leaflets while lowering to zero the abundance of $omega$--3 and $omega$--6 chains. The resulting membrane, reported in @table-depleted-composition, should therefore be viewed not as a quantitative reconstruction of any specific pathological state, butmore as a limiting model of PUFA depletion.
 
 #figure(
     table(
@@ -545,7 +546,7 @@ For the sake of clarity, all hydration distributions were normalized by the numb
 )<fig-hydration> 
 
 
-= Extension to lipidomic context: coarse-grained results (4-5 pages)
+= Extension to lipidomic context: coarse--grained results (4-5 pages)
 
 == Multiscale consistency
 
@@ -589,12 +590,12 @@ To study the consistency between all--atom and coarse--grained descriptions, a D
 The area per lipid obtained with the all--atom model is in excellent agreement with the M3 value, the difference remaining within the three--sigma uncertainty interval. Similarly, both models predict an identical membrane thickness of 3.86 nm. These results indicate that the coarse--grained representation reproduces nicely the global structural organization of the membrane.
 
 
-Meanwhile, larger discrepancies are observed for the deuterium order parameter, but a quantitative comparison should be interpreted with caution. In atomistic simulations, the deuterium order parameter is defined from the orientation of C--H bonds relative to the membrane normal. In contrast, since hydrogen atoms are not explicitly represented in M3, the corresponding quantity is estimated from C--C bonds: the two observables are not strictly equivalent. Still, both models remain consistent with a fluid state, although the coarse--grained representation appears somewhat more ordered. This behavior may arise from the reduced number of degrees of freedom associated with coarse--graining, which might restrict local conformational fluctuations.
+Larger discrepancies are observed for the deuterium order parameter, but a quantitative comparison should be interpreted with caution. In atomistic simulations, the deuterium order parameter is defined from the orientation of C--H bonds relative to the membrane normal. Since hydrogen atoms are not explicitly represented in M3, the corresponding quantity is estimated from C--C bonds, implying that the two observables are not strictly equivalent. Still, both models remain consistent with a fluid state, although the coarse--grained representation appears somewhat more ordered. This behavior may arise from the reduced number of degrees of freedom associated with coarse--graining, which might restrict local conformational fluctuations.
 
 
 #figure(
     image("rsrc/fig-consistencies/fig-pmf-cg-vs-aa.png", width:80%),
-    caption: [Potential of mean force associated with CP55,940 insertion into a DOPC bilayer obtained at atomistic and coarse-grained resolutions.],
+    caption: [Potential of mean force associated with CP55,940 insertion into a DOPC bilayer obtained at atomistic and coarse--grained resolutions.],
 )<fig-pmf-cg-aa>
 
 
