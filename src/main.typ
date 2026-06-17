@@ -11,6 +11,8 @@
 #set text(lang: "en", hyphenate: true)
 #set math.mat(delim: "[")
 #set figure.caption(separator: [ --- ])
+#show figure: set figure(placement: auto)
+
 
 #set math.equation(numbering: "(1)")
 #show math.equation: it => {
@@ -68,6 +70,11 @@
   body
 }
 
+
+#nonumber[= Abstract]
+
+
+#pagebreak()
 #nonumber[= Remerciements]
 
 
@@ -102,15 +109,15 @@
 #pagebreak()
 #set page(columns:1, header:[_Phase--dependent coupling of a cannabinoid ligand in polyunsaturated membranes_])
 
-= Introduction (4-5 pages)
+= Introduction
 
 == Biological and pharmacological context
 
 Cellular communication relies on molecular signals that must be detected and interpreted at the cell surface. In many cases, this process involves membrane receptors embedded in the plasma membrane, which translate extracellular or membrane--associated signals into intracellular responses. The membrane is therefore not only a physical boundary separating the cell from its environment, but also the cellular compartment in which many signaling events are initiated.
 
-Traditional pharmacological frameworks implicitly assume that neurotransmitters diffuse through aqueous media before encountering their receptor @ritter_rang_2020. This picture, while adequate for hydrophilic signaling molecules, becomes incomplete in the case of the endocannabinoid system (ECS) --- a central regulator of neural activity, and a major pharmacological target in neurological and metabolic disorders. Endocannabinoids are lipid-derived molecules synthesized on demand from the hydrolysis of membrane phospholipids @venance_systeme_2004. This biochemical origin confers lipophilic properties, meaning that these molecules preferentially partition into hydrophobic environments rather than the surrounding aqueous phase.
+Traditional pharmacological frameworks implicitly assume that neurotransmitters diffuse through aqueous media before encountering their receptor @ritter_rang_2020. This picture, while adequate for hydrophilic signaling molecules, becomes incomplete in the case of the endocannabinoid system (ECS) --- a central regulator of neural activity, and a major pharmacological target in neurological and metabolic disorders. Endocannabinoids are lipid--derived molecules synthesized on demand from the hydrolysis of membrane phospholipids @venance_systeme_2004. This biochemical origin confers lipophilic properties, meaning that these molecules preferentially partition into hydrophobic environments rather than the surrounding aqueous phase.
 
-Among the main molecular targets of the ECS, the cannabinoid receptor type 1 (CB1) is one of the most abundantly expressed G protein-coupled receptors (GPCRs) in the mammalian central nervous system. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk @hurst_lipid_2010 @jakowiecki_hydrophobic_2020. This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 @thakur_cb1_2005. These include phytocannabinoids such as $Delta$9-tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212--2 are potent agonists, and rimonabant (SR141716A) a well-known inverse agonist.
+Among the main molecular targets of the ECS, the cannabinoid receptor type 1 (CB1) is one of the most abundantly expressed G protein--coupled receptors (GPCRs) in the mammalian central nervous system. Structural and pharmacological evidence suggests that access to its orthosteric binding pocket may occur laterally from within the bilayer rather than directly from the extracellular bulk @hurst_lipid_2010 @jakowiecki_hydrophobic_2020. This pathway is relevant not only for endogenous cannabinoids such as anandamide and 2-arachidonoylglycerol (2--AG), but also for exogenous ligands targeting CB1 @thakur_cb1_2005. These include phytocannabinoids such as $Delta$9--tetrahydrocannabinol (THC), as well as synthetic compounds developed for pharmacological purposes, among which CP55,940 and WIN55.212--2 are potent agonists, and rimonabant (SR141716A) a well--known inverse agonist.
 
 The presynaptic membrane environment, which constitutes an essential component of endocannabinoid signaling, is enriched in sterols, phospholipids, and sphingolipids @ahrends_synaptoneurolipidomics_2025 @lauwers_membrane_2016. Lipidomic analyses have revealed significant compositional alterations under pathological conditions, including depletion of $omega$--3 and $omega$--6 polyunsaturated fatty acids (PUFAs) in patients experiencing a first psychotic episode @le_analysis_2023 @frajerman_lipides_2020. From a biophysical standpoint, such compositional shifts modify membrane properties including acyl chain order, interfacial hydration, bilayer thickness and bending rigidity --- parameters that directly influence ligand partitioning and mobility within the bilayer. Understanding how membrane composition modulates these ligand--membrane interactions therefore appears essential for describing the early physicochemical steps preceding CB1 engagement.
 
@@ -202,7 +209,9 @@ Accordingly, our main analytical tools consist of established membrane descripto
 
 Fundamentally, this work is guided by the idea that membrane composition must be regarded as an essential variable rather than a passive background. If the coupling is sensitive  to lipid organization, then any variations in acyl chain saturation, sterol content, or PUFAs balance may alter drug behavior in ways that cannot be captured by protein affinity alone. The broader perspective of this research is to eventually clarify to what extent the membrane itself participates in shaping pharmacological outcomes ; however, our current study remains focused on the mechanics of coupling.
 
-= Methods (3-4 pages)
+
+#pagebreak()
+= Methods
 
 == All--atom molecular dynamics
 
@@ -234,8 +243,6 @@ The equations of motion were integrated using a 2 fs timestep, with all bonds in
 Temperature was controlled using a Nosé–Hoover thermostat, while pressure was maintained using a Parrinello--Rahman barostat with semi--isotropic pressure coupling, allowing independent fluctuations in the membrane plane and along the bilayer normal. The pressure coupling time constant was set to 5 ps.
 
 === Umbrella sampling and PMF calculations
-
-*NOTES* Vérifier les valeurs des constantes dans le dernier paragraphe.
 
 To characterize ligand insertion beyond the simple partition coefficient, we considered potentials of mean force along a chosen reaction coordinate. In the present case, this coordinate was defined as the projection of the ligand center of mass along the membrane normal (z--axis), which provides a natural description of the insertion process.
 
@@ -404,8 +411,6 @@ This procedure preserves the overall distribution of lipid headgroups, and the a
 
 === Simulation protocol
 
-*NOTES à réécrire un peu, mais garder court. Pulling ?*
-
 Coarse--grained membrane systems were constructed using the CHARMM–GUI MARTINI Maker @qi_charmm-gui_2015. After construction, the systems were subjected to the standard equilibration protocol generated by CHARMM--GUI, consisting of successive energy minimization and restrained equilibration steps.
 
 Production simulations were subsequently performed using GROMACS 2026.1 in the NPT ensemble under periodic boundary conditions. Temperature was maintained at 310.15 K using the velocity--rescaling thermostat, while pressure was controlled semi--isotropically using the C--rescale barostat. Electrostatic interactions were treated using the reaction–field approach with a dielectric constant of 15. A timestep of 20 fs was employed throughout the production runs. All coarse--grained production trajectories were propagated for 2 μs.
@@ -432,17 +437,18 @@ CP55,940 molecules were then introduced at a concentration of 10 mol%, correspon
         [*Model*], [*GROMACS*], [*System size*], [*Hardware*],
         [*Performance*], [*Compute time*],
 
-        [All-atom], [2018.2], [$tilde$60k atoms],
+        [All--atom], [2018.2], [$tilde$60k atoms],
         [128 CPU cores], [$tilde$75 ns/day], [355k CPUh],
 
         [MARTINI3], [2026.1], [$tilde$150k particles],
         [NVIDIA V100], [$tilde$1200 ns/day], [1.3k GPUh],
     )],
-    caption: [Computational resources used throughout this work. All-atom simulations were performed on the Mesocentre de Franche--Comté. MARTINI3 simulations were carried out on the Jean Zay national supercomputer through the ANR LADY.],
+    caption: [Computational resources used throughout this work. All--atom simulations were performed on the Mesocentre de Franche--Comté. MARTINI3 simulations were carried out on the Jean Zay national supercomputer through the ANR LADY.],
 )<table-ressources>
 
 
-=  Atomistic results: lipid dependent ligand-membrane coupling (5-6 pages)
+#pagebreak()
+=  Atomistic results: lipid dependent ligand-membrane coupling
 
 == Insertion profiles, orientational behaviors
 
@@ -546,7 +552,10 @@ For the sake of clarity, all hydration distributions were normalized by the numb
 )<fig-hydration> 
 
 
-= Extension to lipidomic context: coarse--grained results (4-5 pages)
+
+#pagebreak()
+
+= Extension to lipidomic context: coarse--grained results 
 
 == Multiscale consistency
 
@@ -605,31 +614,127 @@ A more stringent test is provided by free--energy profiles  associated with memb
 Overall, the M3 model reproduces the essential structural characteristics of the membrane and preserves the main thermodynamic features of CP55,940 insertion. Although quantitative differences remain in orientational descriptors and in the fine structure of the PMF, the overall insertion mechanism appears conserved across resolutions. These results support the use of the coarse--grained model for exploring larger membrane systems.
 
 == Realistic membrane compositions
-- w6 modulation 
-- cholesterol content
-- headgroups
 
-= Discussion (4-5 pages)
+#figure(
+    image("rsrc/fig-apl-cg/apl.png", width:80%),
+    caption: [Area per lipid (APL) of the realistic and PUFA--depleted membranes in the absence and presence of CP55,940. The reported values correspond to the average area per lipid of each leaflet, considering all lipid species. Circles denote the outer leaflet and triangles the inner leaflet.],
+)<fig-apl-cg>
+
+The realistic and PUFA--depleted compositions were then compared at the coarse--grained level in order to assess how lipidomic changes affect membrane organization and ligand insertion. As shown in @fig-apl-cg, the realistic membrane exhibits a marked leaflet asymmetry, with a larger APL in the inner leaflet than in the outer leaflet. This is consistent with the asymmetric composition of the model, since the inner leaflet contains a larger fraction of PE, PS, PI and polyunsaturated lipid species. In contrast, PUFA depletion strongly reduces this asymmetry and decreases the APL, especially in the inner leaflet. This indicates that replacing polyunsaturated chains by monounsaturated analogues leads to a more compact membrane organization.
+
+The addition of CP55,940 increases the APL in both membrane models, indicating that the depacking effect observed at the atomistic level is preserved in the larger coarse--grained systems. This effect is particularly clear in the realistic membrane, where both leaflets expand upon ligand addition. In the PUFA--depleted membrane, CP55,940 also increases the APL, suggesting that the ligand still acts as a membrane inclusion that perturbs lateral packing, even in a more ordered lipid environment.
+
+This interpretation is further supported by chain order parameter values reported in @table-chain-order. The PUFA--depleted membrane displays a higher average order parameter than the realistic membrane, increasing from 0.3742 $plus.minus$ 0.0005 to 0.4994 $plus.minus$ 0.0002 in the control systems. This confirms that PUFA depletion produces a more ordered and tightly packed bilayer. Upon addition of CP55,940, the order parameter decreases in both membranes, from 0.3742 to 0.3576 in the realistic system and from 0.4994 to 0.4558 in the PUFA--depleted system. Together with the APL increase, this shows that CP55,940 tends to disorder the membrane and partially counteracts the compaction induced by PUFA depletion.
+
+#figure(
+  table(
+    columns: (auto, auto, auto),
+
+    align: (left, center, center),
+
+    stroke: (x, y) => if y == 0 {
+      (bottom: 1pt + black)
+    } else if y == 3 {
+      (top: 1pt + black)
+    } else {
+      (bottom: 0.5pt + gray.lighten(50%))
+    },
+
+    [*System*], [*Control*], [*+CP55,940*],
+
+    [Realistic],
+    [0.3742 $plus.minus$ 0.0005],
+    [0.3576 $plus.minus$ 0.0017],
+
+    [PUFA--depleted],
+    [0.4994 $plus.minus$ 0.0002],
+    [0.4558 $plus.minus$ 0.0013],
+  ),
+
+  caption: [
+    Average coarse--grained chain order parameter over all lipids obtained from MARTINI3 simulations of realistic and PUFA--depleted membranes, with and without CP55,940.
+  ],
+) <table-chain-order>
+
+
+Finally, ligand insertion was quantified by counting the number of CP55,940 molecules effectively inserted into the membrane after equilibration. In the realistic membrane, 458 out of 500 ligands were found inserted, whereas only 360 out of 500 ligands were inserted in the PUFA--depleted membrane. Although this analysis remains qualitative, because some ligands can aggregate before insertion, it suggests that the realistic PUFA--containing membrane provides a more permissive environment for CP55,940 uptake. Conversely, the more ordered PUFA--depleted membrane appears less favorable to ligand insertion on the simulated timescale.
+
+Overall, these coarse--grained simulations extend the atomistic observations to larger and more complex membrane models. PUFA depletion induces membrane compaction and increased chain ordering, whereas CP55,940 promotes lateral expansion and decreases lipid order. The lower insertion fraction observed in the depleted membrane further suggests that lipidomic changes may modulate not only the structural response of the bilayer, but also the effective availability of the ligand within the membrane.
+
+
+#pagebreak()
+= Discussion
 
 == Lipid composition as a modulator of ligand-membrane coupling
 
+From the results, it appears that interactions between CP55,940 and the membrane depend strongly on the physical state and composition of the bilayer. In essence, the ligand induces structural changes within the membrane, while membrane --- in turn --- shapes the dynamic landscape experienced by the drug.
+
+Considering both sides of the coupling, it is first worth noting that membrane is a suitable environment for the drug. Its lipid--derived nature makes it easy to enter the bilayer, where it positions itself below the polar interface formed by the lipids. Consequently, the behavior of the ligand becomes strongly dependent on the nature of the surrounding lipid species. In a fluid environment, CP55,940 is free to arrange itself according to its own physicochemical preferences, keeping its polar groups close to the interface while the rest of the molecule explores a wide range of conformations. In a more constrained membrane, such freedom is considerably reduced. The ligand is no longer able to fully satisfy these preferences, and its insertion state becomes less clearly defined. What emerges is a competition between what the molecular architecture of the ligand tends to favor and what the membrane environment allows.
+
+From the membrane perspective, it is equally clear that its physical state strongly influences the way it accommodates the ligand. The structural response observed upon CP55,940 insertion is not identical in fluid and ordered environments. What nevertheless appears common to all systems is that CP55,940 behaves somewhat like the small spacers used when laying tiles. By forcing a slight separation between neighboring lipids, it creates additional lateral free volume and facilitates hydration of the polar interace.
+
+But what happens beneath the interface? Here, the answer depends strongly on the initial membrane state. In ordered membranes, CP55,940 disrupts the highly constrained packing of the acyl chains, partially restoring conformational freedom to the surrounding lipids. In that sense, one may be tempted to draw a parallel with the role of cholesterol, insofar as the ligand seems to shift the membrane away from an extreme gel--like organization toward a state displaying some characteristics of a liquid--ordered phase. The comparison, however, should stop there. Unlike cholesterol, in membranes whose hydrophobic core is already free to fluctuate, its presence has little to no impact on chain ordering. The ligand is simply not a sufficiently strong constraint to suppress these fluctuations, whereas cholesterol is precisely known for its ability to regulate them.
+
+One encouraging aspect of the present study is that similar trends are observed across multiple levels of resolution. What is observed at the atomistic scale is somehow recovered within the coarse--grained description. Although some of the results remain preliminary, the overall picture consistently supports the idea that ligand--membrane coupling may contribute to drug efficacy, without implying that it is its sole determinant.
+
+For lipophilic molecules, such as many compounds targeting the endocannabinoid system, one is naturally led to question what becomes of the ligand once it enters the membrane. The bilayer may first act as a reservoir, a pocket or even a trap, simply because it is capable of accommodating such molecules and retaining them for extended periods of time. Yet the membrane may play a more active role than that. It can also be viewed as a two--dimensional medium through which the ligand travels. In this picture the bilayer behaves almost like a waveguide, directing the motion of membrane--associated ligands, while its transport properties are themselves determined by lipid composition and state --- a compact and ordered membrane does not offer the same landscape as a fluid and highly polyunsaturated one, as shown in the study.
+
+This perspective may prove relevant for drug design. Beyond the classical question of receptor affinity, one may ask whether the affinity of a ligand for particular membrane environments, together with the mechanical properties of the membranes surrounding therapeutic targets, contributes to shaping pharmacological responses. If membrane composition alters ligand partitioning, mobility or accessibility to the receptor, then part of the dose--response relationship may already be determined before the first ligand--receptor contact occurs. While such ideas remain speculative at present, the results reported here suggest that they deserve further investigation.
+
 == Implications for lipidomic alterations
-- w6 depletion & potential pharmacological consequences
-- Positioning within broader scientific landscape
+
+
+Before discussing the implications of PUFA depletion itself, it is worth realizing how fortunate we are to have access to such detailed lipidomics data in a biological environment where CB1 is highly expressed. The combination of modern lipidomics, molecular dynamics simulations and current computational resources now allows us to approach topical medical questions from a molecular perspective.
+
+This was precisely the spirit of the present work which aimed to reproduce --- at least partially --- the complexity of the synaptic environment, in terms of lipids. We went further by proposing a deliberately PUFA--depleted model to explore a hypothesis currently receiving attention within the psychiatric community, namely the possible role of $omega$--3 and $omega$--6 deficiencies associated with several psychiatric disorders. Lipidomic alterations are measured in patients. Molecular dynamics cannot explain these observations on its own, nor establish causal relationships. What it can do, however, is provide a physical framework in which the consequences of such alterations can be explored, offering a bridge between clinical observations and molecular mechanisms.
+
+From this bridge, several consequences can be envisioned. First, the healthy synaptic membrane considered here is particularly rich in PUFA lipids, a sign of high fluidity. From the perspective of the ligand --- and perhaps even more so for endogenous ligands such as 2--AG --- this means an environment that allows these molecules to fully exploit their own physicochemical nature. Membrane insertion can occur with limited perturbation of the surrounding lipids, and once inserted, the ligand remains free to diffuse, reorient and explore the bilayer. Such a membrane may therefore constitute a favorable medium for associated signaling processes.
+
+The situation may differ in a more ordered or pathological membrane. Increased packing and reduced fluidity could make insertion less favorable and slow down membrane dynamics, but PUFA depletion may alter more than membrane fluidity alone. It also partially erodes the asymmetry that characterizes synaptic membranes. Lipids of different shapes are known to promote distinct curvature tendencies and stress states within the bilayer. Consequently, modifying their abundance is expected to alter, at least locally, the effective geometry of the membrane. Changes in geometry naturally come with changes in packing constraints, which may in turn affect ligand--membrane interactions. One may further speculate that such membranes become more selective. Different compounds may not be affected equally by lipidomic alterations. In that sense, the membrane could act not only as a transport medium, but also as a form of filter that favors some molecules over others. While this idea remains speculative and would require dedicated investigations, it naturally emerges from the picture suggested by the present results.
 
 == Methodological strengths and limitations
-- Absence of receptor
-- Sampling limitations 
-- Force field consideration 
+
+If this work has a particular strength, it is first its ability to explore several levels of description that ultimately tell a coherent story. Observing similar trends across atomistic and coarse--grained resolutions provides encouraging evidence for the robustness of the conclusions. Bridging scales is rarely straightforward, especially in membrane systems where different resolutions do not necessarily preserve the same observables. This multiscale approach therefore offers a valuable framework, capable of connecting fine molecular descriptions to larger biological contexts. Nevertheless, several limitations must be acknowledged.
+
+The first is the absence of the receptor itself. Ultimately, the system of interest is the receptor--membrane--ligand triad, whereas the present work is only a slice of the complete picture. As a consequence, no direct conclusions can be drawn regarding receptor activation or pharmacological outcomes.
+
+A second limitation concerns simulation timescales, particularly for the coarse--grained systems. Although the atomistic simulations extend over hundreds of nanoseconds, and the coarse--grained trajectories over several microseconds, these times remain insufficient to fully explore collective reorganizations. Processes such as lateral demixing, domain formation or preferential lipid recruitment around the ligand may occur on considerably longer timescales. Such phenomena could not only refine the interpretation of the results, but also provide valuable insight into the type of membrane environment preferentially occupied by CP55,940. Does the ligand preferentially partition into more fluid regions? Does it destabilize existing domains, or conversely contribute to their stabilization? These questions remain open.
+
+Although CP55,940 constitutes a convenient molecular probe, cannabinoid ligands span a wide range of physicochemical properties. It therefore remains unclear to what extent the trends identified here can be generalized to endogenous ligands or to other synthetic compounds. Another limitation concerns the choice of a strongly depleted membrane. Because detailed lipidomic data for pathological synaptic membranes remain scarce, the present model should not be interpreted as a faithful reconstruction of any specific disease state. It only maximizes the physical consequences of PUFA depletion. While such an approach is useful for identifying possible mechanisms, the medical relevance of the conclusions must naturally be interpreted with caution and modulated in light of the severity of the depletion considered here.
+
+
+No independent replicas were performed. Instead, computational resources were invested in extending the duration of individual trajectories, motivated by the relatively slow relaxation dynamics of membrane systems. The overall consistency observed across multiple observables provides confidence in the trends reported here. Nevertheless, future studies would greatly benefit from combining long trajectories with independent replicas in order to strengthen the statistical significance of the results.
+
+A final limitation concerns experimental validation. This work was conducted alongside experimental investigations performed by Prof. Isabel Alves, Adeline Cœugnet and collaborators at the institute of Chemistry & Biology of Membranes & Nano--objects (CBMN) in Bordeaux. Using fluorescence probes in lipid vesicles, their work explores several structural properties that are conceptually related to those investigated in our atomistic membrane models. While some of the observed trends appear qualitatively consistent, the two approaches operate at different levels of description and cannot be directly compared quantitatively. The mechanisms proposed here remain primarily simulation--based and should not be regarded as experimentally validated. This limitation becomes even more pronounced for the realistic lipidomic membranes, for which no direct experimental counterpart currently exists.
+
+Taken together, these limitations do not challenge the main trends identified in this work, but rather define the level at which the conclusions should be interpreted.
 
 == Perspectives
-- Inclusion of CB1 in future work
-- Multi ligand comparison
-- Ongoing collaboration with CBMN 
 
+The results obtained in this work naturally open several perspectives for future investigations.
 
-= Conclusion (3 pages)
+The most immediate extension consists in introducing the cannabinoid receptor itself into the simulations. While the present study focused on the membrane environment and on the physicochemical processes preceding receptor recognition, the next step is to determine how these membrane effects propagate to ligand access and receptor activation. In particular, it would be interesting to characterize the lateral entry pathways of cannabinoid ligands toward CB1 and to evaluate whether lipidomic alterations modify the probability of receptor encounter, the preferred access routes, ... Extending these investigations to CB2 would provide an additional opportunity to compare two closely related receptors embedded in similar but distinct membrane environments.
 
+The membrane models themselves can also be refined. Although the realistic membrane developed in this work represents a substantial step beyond simplified binary mixtures, it remains a reduced representation of the synaptic lipidome. Future simulations could incorporate a larger fraction of the experimentally identified lipid species and explore additional pathological lipidomic signatures. In particular, larger membrane patches and longer simulation times would provide access to collective phenomena such as lipid domain formation, lateral segregation and the emergence of preferential lipid environments surrounding inserted ligands or membrane proteins.
+
+Beyond the objectives of the present study and the efforts aimed at understanding how membrane compositions influence cannabinoid signaling, exploring this idea in greater detail and for a broader class of pharmacological targets may ultimately contribute to a more integrated description of pharmacological outcomes in physiological and pathological contexts.
+
+As a final word, the collaboration with the group of Professor Isabel Alves at CBMN is currently giving rise to the preparation of a scientific article based on the combined experimental and computational results. This forthcoming work will constitute a natural continuation of the present study. 
+
+#pagebreak()
+= Conclusion
+
+This work investigated how membrane composition modulates the behavior of the cannabinoid agonist CP55,940 before explicit receptor binding. The central idea was to consider the membrane not as a passive hydrophobic solvent, but as a structured and composition--dependent environment capable of shaping ligand insertion, orientation and availability.
+
+At the atomistic level, CP55,940 was shown to partition favorably into lipid bilayers and to adopt an interfacial insertion mode in fluid DOPC membranes. This was confirmed by PMF profiles, showing a pronounced minimum inside the bilayer. In more ordered DPPC--based membranes, the ligand displays broader insertion and orientational distributions, suggesting that lipid packing constraints influence the accessible configurations of the molecule.
+
+The membrane response to ligand insertion was also composition--dependent. CP55,940 generally increased the area per lipid, stated as a depacking effect produced by the insertion of a small hydrophobic molecule within the bilayer. Changes in chain order and hydration further indicated that the ligand perturbs membrane organization, particularly in initially ordered systems. These results support a bidirectional view of ligand--membrane coupling: the membrane constrains the ligand, while the ligand modifies the membrane.
+
+The coarse–grained MARTINI3 simulations extended this picture to larger and more realistic lipidomic--inspired membrane models. The comparison between the realistic synaptic membrane and its PUFA–depleted counterpart showed that removal of polyunsaturated chains leads to a more compact and more ordered bilayer. In contrast, CP55,940 partially counteracts this organization by increasing the APL and decreasing the average chain order parameter. Fewer ligands were inserted in the PUFA--depleted membrane on the simulated timescale, suggesting that PUFA depletion may reduce membrane permissiveness toward lipophilic cannabinoid ligands.
+
+These results suggest that lipidomic alterations may influence cannabinoid signaling upstream of receptor binding, by reshaping the membrane environment through which ligands partition, diffuse and orient before reaching CB1. This interpretation remains preliminary, since the receptor itself was not included and longer simulations with independent replicas would be required to quantify lateral diffusion, lipid reorganization and equilibrium partitioning more rigorously. Nevertheless, the present work provides a physically coherent framework linking membrane composition, ligand insertion and membrane structural response.
+
+More broadly, this study supports the relevance of lipidomics--informed molecular simulations for computational pharmacology. By combining atomistic resolution with coarse--grained realistic membrane models, it becomes possible to connect molecular mechanisms with biologically motivated lipid compositions. Future work including CB1, CB2, additional ligands and experimental validation will be necessary to determine how these membrane--mediated effects contribute to cannabinoid receptor functions.
 
 #pagebreak()
 #bibliography("cb1.bib")
