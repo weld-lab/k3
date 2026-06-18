@@ -85,13 +85,11 @@
 
 
 #pagebreak()
-#nonumber[= Remerciements]
-
 
 #align(right)[
     #emph[
         Ret e voe din dibab ‘tre div vuhez,#linebreak()
-        En-dro d'ar familh, en-dro d'an enorioù.#linebreak()
+        En--dro d'ar familh, en--dro d'an enorioù.#linebreak()
         Met n'eus ket a enor hep familh,#linebreak()
         Setu perak emañ ar gerioù-mañ.#linebreak()
 
@@ -102,17 +100,30 @@
 
         Kavet em eus ur garantez,#linebreak()
         Kollet em eus ur mignon,#linebreak()
-        Gouelañ a ran noz-ha-deiz,#linebreak()
+        Gouelañ a ran noz--ha--deiz,#linebreak()
         Ne vo ken a «ken ar c’hentañ».#linebreak()
 
-        Soñjal a ran eus ma zud-kozh,#linebreak()
+        Soñjal a ran eus ma zud--kozh,#linebreak()
         D’an amzer a dremen,#linebreak()
         D’ar glav ha d’an amzer vat,#linebreak()
         O c’hortoz an deiz, o tremen hep bezañ.#linebreak()
     ]
 ]
 
-À finir d'écrire.
+#pagebreak()
+#nonumber[= Remerciements]
+
+J'écris ces quelques mots pour remercier ceux qui ont côtoyé mon labeur, supporté mes humeurs et contribué à forger mon caractère.
+
+Professeur Christophe Ramseyer, s'il est vrai qu'on a peu de mentors dans une vie, je me dois de vous confesser la place particulière que vous y occupez. Pour vos intuitions, votre aménité, le sérieux et la détermination dont vous faites preuve, je vous remercie. Ces quelques années partagées à vos côtés, comme élève puis stagiaire, ont été une école en soi.
+
+À ce titre, je souhaite remercier Florentin Allemand, Tandis Atoun, Maxime Mermet et Rohith Ravi. J'ai beaucoup appris et progressé à vos côtés, et je nourris l'espoir que nos carrières cohabitent pour de nombreuses années. Plus généralement, je souhaite remercier l'ensemble du K3 pour son accueil. Je remercie également le corps professoral pour sa transparence, ses qualités et sa proximité : au lecteur intrigué, je ne peux qu'en recommander le chemin. 
+
+Je vous remercie également Titouan Alphonse, Muhammad Nabyan Arkan, et Jules Stevenot --- compagnons d'armes et de galère, de joies et de peines. Vous avez été mon quotidien pour ces années de Master et je vous en suis reconnaissant.
+
+J'adresse une pensée à mon ami Léonard Girault --- connaître vingt-sept années de fidélité, lorsque l'on approche tendrement de la trentaine, c'est chose peu banale pour qui mesure le poids des années.
+
+Enfin, Yliana, je te remercie. Ma jeune histoire de physicien est née à tes côtés, avec Diabolo, dans les murs d'un petit appartement trop chaud. Puisse le sort nous être favorable et nous offrir une longue vie commune, dans la lumière du bonheur que vous m'apportez.
 
 #pagebreak()
 #outline()
